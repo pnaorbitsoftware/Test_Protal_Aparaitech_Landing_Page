@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Testportal | AI-Powered Assessment Platform</title>
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter & Poppins for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1A2C3E;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* colors from brand hints */
+        :root {
+            --primary-green: #1f8b4c;
+            --primary-green-light: #e9f6ef;
+            --accent-orange: #f48c2e;
+            --accent-violet: #8b5cf6;
+            --gray-light: #f9fafb;
+            --gray-border: #eef2f6;
+            --text-dark: #1e2f3e;
+            --text-muted: #5a6e7c;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #1f8b4c 0%, #8b5cf6 60%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        /* buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+            box-shadow: 0 4px 8px rgba(31,139,76,0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #106e3e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--gray-border);
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        /* Header */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #1f8b4c, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--gray-border);
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        /* Hero grid */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            padding: 40px 0 20px;
+        }
+
+        .access-card {
+            background: var(--gray-light);
+            border-radius: 32px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+        }
+
+        .access-input {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .access-input input {
+            flex: 1;
+            padding: 14px 18px;
+            border-radius: 60px;
+            border: 1px solid var(--gray-border);
+            font-size: 1rem;
+        }
+
+        .badge {
+            background: white;
+            border-radius: 50px;
+            padding: 6px 16px;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        /* logos marquee style */
+        .logo-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            align-items: center;
+            opacity: 0.7;
+        }
+
+        .logo-item {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4b5e6c;
+            background: #f4f6f9;
+            padding: 8px 20px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        /* cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: all 0.25s ease;
+            border: 1px solid var(--gray-border);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #dde4ea;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2.6rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .learn-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-green);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* feature list row */
+        .features-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 40px 0;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            background: #fefefe;
+            padding: 20px 10px;
+            border-radius: 28px;
+            background: var(--gray-light);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        /* problem/solution split */
+        .split-box {
+            background: linear-gradient(115deg, #f9fafc 0%, #ffffff 100%);
+            border-radius: 48px;
+            padding: 48px;
+            margin: 48px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            border: 1px solid #eef2f0;
+        }
+
+        .green-stat {
+            background: var(--primary-green-light);
+            border-radius: 32px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .trees-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        /* testimonials */
+        .testimonial {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 40px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--gray-border);
+            margin: 32px 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 32px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--gray-border);
+            transition: 0.2s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .blog-img {
+            height: 160px;
+            background: #e4e9f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #3c5a73;
+        }
+
+        .blog-content {
+            padding: 24px;
+        }
+
+        footer {
+            background: #fbfdfc;
+            padding: 64px 0 32px;
+            border-top: 1px solid #eef2f0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .hero { grid-template-columns: 1fr; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
+            .split-box { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; }
+            .nav-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header style="border-bottom: 1px solid #eef2f0;">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">Testportal</div>
+            <div class="nav-links">
+                <a href="#">Product</a>
+                <a href="#">Who it's for</a>
+                <a href="#">Use cases</a>
+                <a href="#">Pricing</a>
+                <a href="#">Resources</a>
+                <span class="lang-btn">EN <i class="fas fa-globe"></i></span>
+                <a href="#">Login</a>
+                <a href="#" class="btn btn-primary" style="padding: 8px 20px;">Sign up</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero section -->
+    <div class="container">
+        <div class="hero">
+            <div>
+                <div class="badge">✨ AI-powered skills & knowledge</div>
+                <h1>Turn your assessments into success stories</h1>
+                <p style="font-size: 1.2rem; color: var(--text-muted); margin: 20px 0 24px;">Serving 2.5M+ business and educational users worldwide. Create online exams, quizzes, and skill tests in minutes.</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary">Sign up - it's free <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Explore demo</a>
+                </div>
+                <p style="margin-top: 24px; font-size: 0.85rem;">No credit card required</p>
+            </div>
+            <div class="access-card">
+                <i class="fas fa-key" style="font-size: 2rem; color: var(--accent-orange);"></i>
+                <h3 style="margin: 12px 0;">Here to take a test?</h3>
+                <p>No registration required. Enter your access code and start.</p>
+                <div class="access-input">
+                    <input type="text" placeholder="Access code e.g., ABC-XYZ123">
+                    <button class="btn btn-primary">Start your test →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer logos row -->
+    <div class="container">
+        <div class="logo-row">
+            <span class="logo-item">DB Schenker</span>
+            <span class="logo-item">Hard Rock Cafe</span>
+            <span class="logo-item">Liqui Moly</span>
+            <span class="logo-item">Panasonic</span>
+            <span class="logo-item">Electrolux</span>
+            <span class="logo-item">DHL</span>
+            <span class="logo-item">Techland</span>
+            <span class="logo-item">RSM</span>
+        </div>
+        <p style="text-align: center; font-size: 0.9rem; margin-top: -10px; color: var(--text-muted);">We helped these great brands write their success stories. Join them now.</p>
+    </div>
+
+    <!-- Skills and knowledge testing made easy (use cases) -->
+    <div class="section">
+        <div class="container">
+            <h2>Skills and knowledge testing made easy</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">One assessment platform for all your needs — Business & Education</p>
+            <div class="cards-grid">
+                <div class="service-card"><div class="card-icon"><i class="fas fa-search" style="color: #f48c2e;"></i></div><h3>Recruitment</h3><p>Identify talents without CV screening.</p><a href="#" class="learn-link">Learn more →</a></div>
+                <div class="service-card"><div class="card-icon"><i class="fas fa-users" style="color: #8b5cf6;"></i></div><h3>Employee Assessments</h3><p>Encourage growth & team spirit.</p><a href="#" class="learn-link">Learn more →</a></div>
+                <div class="service-card"><div class="card-icon"><i class="fas fa-chalkboard-user" style="color: #1f8b4c;"></i></div><h3>Training</h3><p>Professional distraction-free environment.</p><a href="#" class="learn-link">Learn more →</a></div>
+                <div class="service-card"><div class="card-icon"><i class="fas fa-chart-line" style="color: #f48c2e;"></i></div><h3>Sales Training</h3><p>Boost sales with essential skills.</p><a href="#" class="learn-link">Learn more →</a></div>
+                <div class="service-card"><div class="card-icon"><i class="fas fa-headset" style="color: #8b5cf6;"></i></div><h3>Customer Service</h3><p>Meet service standards with custom tests.</p><a href="#" class="learn-link">Learn more →</a></div>
+                <div class="service-card"><div class="card-icon"><i class="fas fa-shield-alt" style="color: #1f8b4c;"></i></div><h3>Safety Procedures</h3><p>Build better workplace morale.</p><a href="#" class="learn-link">Learn more →</a></div>
+                <div class="service-card"><div class="card-icon"><i class="fas fa-certificate" style="color: #f48c2e;"></i></div><h3>Certification</h3><p>Streamline certification processes.</p><a href="#" class="learn-link">Learn more →</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- There is a better way to test (feature highlights) -->
+    <div class="section" style="background: #fefcf8;">
+        <div class="container">
+            <h2>There is a better way to test</h2>
+            <div class="features-row">
+                <div class="feature-item"><i class="fas fa-robot"></i><h4>AI-Powered Questions</h4><p style="font-size: 0.85rem;">Generate questions in seconds</p></div>
+                <div class="feature-item"><i class="fas fa-comment-dots"></i><h4>Feedback</h4><p>Personalized responses</p></div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i><h4>Automatic Grading</h4><p>Save countless hours</p></div>
+                <div class="feature-item"><i class="fas fa-chart-pie"></i><h4>Insights & Analytics</h4><p>Deep performance metrics</p></div>
+                <div class="feature-item"><i class="fas fa-globe"></i><h4>Remote Assessments</h4><p>Anywhere, any device</p></div>
+                <div class="feature-item"><i class="fas fa-leaf"></i><h4>Eco-friendly</h4><p>Paperless & green</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem & Solution: AI Question Generator -->
+    <div class="container">
+        <div class="split-box">
+            <div>
+                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #f48c2e;"></i>
+                <h3 style="margin: 16px 0;">Problem</h3>
+                <p>Creating detailed and insightful questions takes a lot of time. Especially for choice-based online and on-site assessments. Could there be a solution that saves time and produces reliable content?</p>
+            </div>
+            <div>
+                <i class="fas fa-microchip" style="font-size: 2rem; color: #1f8b4c;"></i>
+                <h3 style="margin: 16px 0;">Solution</h3>
+                <p>Let Testportal AI generate questions for you! Provide your materials or select a topic — AI generates questions in seconds. Review, adjust, and you're all set.</p>
+                <a href="#" class="btn btn-primary" style="margin-top: 16px;">Try AI generator <i class="fas fa-magic"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Microsoft Teams Integration -->
+    <div class="section">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; background: #0f2b2d; color: white; border-radius: 48px; padding: 48px 40px;">
+                <div style="flex: 1.2;">
+                    <i class="fab fa-microsoft" style="font-size: 2.8rem; color: #8b5cf6;"></i>
+                    <h2 style="text-align: left; color: white; margin-top: 12px;">Testportal and Microsoft Teams.<br>A perfect match.</h2>
+                    <p style="margin: 16px 0; color: #cddfda;">Combine unique features with Teams power. Succeed in online assessments.</p>
+                    <a href="#" style="background: #ffffff20; backdrop-filter: blur(2px); color:white; padding: 10px 24px; border-radius: 40px; display: inline-block; text-decoration: none; font-weight: 600;">Add Testportal to Teams →</a>
+                </div>
+                <div style="flex: 1; text-align: center;"><i class="fas fa-chalkboard" style="font-size: 5rem; opacity: 0.8;"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enterprise + Trees saved -->
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0 48px;">
+            <div style="background: #f9f9fe; border-radius: 36px; padding: 36px;">
+                <i class="fas fa-shield-haltered" style="font-size: 2.2rem; color: #8b5cf6;"></i>
+                <h3>Enterprise-grade security & data protection</h3>
+                <p>Your respondents' personal data and assessment results are perfectly safe. We never access that information, easily modify or delete records any time.</p>
+                <a href="#" style="color: var(--primary-green); font-weight: 600;">Learn more →</a>
+            </div>
+            <div class="green-stat">
+                <i class="fas fa-tree" style="font-size: 2.2rem;"></i>
+                <h3 style="margin: 8px 0;">Let's save trees together</h3>
+                <p>Choose online assessments, reduce ecological footprint.</p>
+                <div style="margin: 24px 0;">
+                    <div><strong>📄 Answers given:</strong> 1,484,967,770</div>
+                    <div><strong>📋 Avg. questions/sheet:</strong> 5</div>
+                    <div><strong>🌳 Sheets from one tree:</strong> 8,000</div>
+                </div>
+                <div class="trees-number">🌲 37,124 <span style="font-size: 1.2rem;">trees saved</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial DHL -->
+    <div class="container">
+        <h2 style="text-align: left;">What our users say</h2>
+        <div class="testimonial">
+            <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--primary-green); opacity: 0.4;"></i>
+            <p style="font-size: 1.1rem; margin: 16px 0; line-height: 1.5;">"Our company has been assessing the knowledge of our employees and delivery persons to guarantee professional customer service. Testportal proved to be a great platform with clear test-creation interface. During assessment we monitor progress, after test we receive detailed statistics."</p>
+            <div style="display: flex; align-items: center; gap: 16px; margin-top: 20px;"><img src="https://ui-avatars.com/api/?background=1f8b4c&color=fff&name=Hirek+C" style="width: 52px; border-radius: 50%;" alt="avatar"><div><strong>Hirek Chmielowiec</strong><br>OPS Trainer, DHL</div></div>
+        </div>
+    </div>
+
+    <!-- Blog section -->
+    <div class="section">
+        <div class="container">
+            <h2>Our blog</h2>
+            <div class="blog-grid">
+                <div class="blog-card"><div class="blog-img"><i class="fas fa-plug"></i> HubSpot</div><div class="blog-content"><span style="color: #f48c2e; font-size: 0.8rem;">Customer Stories</span><h4>Connecting Testportal with HubSpot & Badgr for cybersec training</h4><p style="margin-top: 8px;">Feb 06, 2024 · 2 min read</p><a href="#" class="learn-link">Read more →</a></div></div>
+                <div class="blog-card"><div class="blog-img"><i class="fas fa-brain"></i> AI</div><div class="blog-content"><span style="color: #1f8b4c; font-size: 0.8rem;">Other</span><h4>Testportal introduces AI-generated quizzes, tests and exams</h4><p>Mar 16, 2023 · 2 min read</p><a href="#" class="learn-link">Read more →</a></div></div>
+                <div class="blog-card"><div class="blog-img"><i class="fas fa-chart-simple"></i> RSM Poland</div><div class="blog-content"><span style="color: #8b5cf6;">Customer Stories</span><h4>How to achieve effectiveness in remote recruitment?</h4><p>Apr 05, 2022 · 3 min read</p><a href="#" class="learn-link">Read more →</a></div></div>
+                <div class="blog-card"><div class="blog-img"><i class="fas fa-truck-fast"></i> DHL</div><div class="blog-content"><span style="color: #1f8b4c;">Customer Stories</span><h4>Better service quality with online tests at DHL</h4><p>Oct 13, 2021 · 3 min read</p><a href="#" class="learn-link">Read more →</a></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- final CTA -->
+    <div class="container" style="margin-bottom: 80px;">
+        <div style="background: linear-gradient(135deg, #eef7f2, #ffffff); border-radius: 60px; padding: 64px 32px; text-align: center;">
+            <h2>Create your first online test, quiz or exam</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 28px;">Explore all of Testportal assessment software features and streamline your online assessments. It's on the house. You're welcome.</p>
+            <a href="#" class="btn btn-primary" style="font-size: 1.1rem;">Sign up free →</a>
+            <p style="margin-top: 16px;">✓ Free registration  ✓ AI-driven features  ✓ No credit card</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><h4>Product</h4><ul style="list-style: none; margin-top: 12px;"><li>Skills Assessment</li><li>Online Quiz Maker</li><li>Exam Software</li><li>AI Question Creator</li></ul></div>
+            <div><h4>For Business</h4><ul style="list-style: none;"><li>HR & Recruitment</li><li>Training Departments</li><li>Certification</li><li>Sales & Customer Service</li></ul></div>
+            <div><h4>Resources</h4><ul><li>Help Center</li><li>Customer Stories</li><li>About Us</li><li>Contact</li></ul></div>
+            <div><h4>Legal</h4><ul><li>Privacy Policy</li><li>Terms & Conditions</li><li>Cookie Settings</li></ul><div style="margin-top: 20px;"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i></div></div>
+        </div>
+        <hr style="margin: 48px 0 24px; border-color: #e2e8f0;">
+        <p style="text-align: center; color: #7c8b99;">© Testportal 2026 — AI-powered skills and knowledge assessment platform</p>
+    </div>
+</footer>
+</body>
+</html>
