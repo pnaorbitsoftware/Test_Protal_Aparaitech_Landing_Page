@@ -1119,267 +1119,245 @@ footer{
             margin: 0 auto;
         }
 
-        /* =============================================
-           FOOTER STYLES (only footer, fully modern)
-        ============================================= */
-        .site-footer {
-            background: #ffffff;
-            border-top: 1px solid #eef2f0;
-            padding: 70px 0 32px;
-            width: 100%;
-        }
+        /* =========================================
+   WORKDAY EXACT FOOTER
+========================================= */
 
-        .footer-container {
-            max-width: 1300px;
-            width: 90%;
-            margin: 0 auto;
-        }
+.workday-footer{
 
-        /* footer grid layout */
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 48px 32px;
-            margin-bottom: 48px;
-        }
+    width:100%;
 
-        /* column headings */
-        .footer-col h4 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #083b44;
-            margin-bottom: 24px;
-            letter-spacing: -0.2px;
-            position: relative;
-            display: inline-block;
-        }
+    background:#032a5c;
 
-        /* optional subtle underline effect */
-        .footer-col h4:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 32px;
-            height: 3px;
-            background: #b8f27f;
-            border-radius: 4px;
-        }
+    padding:70px 60px 30px;
 
-        .footer-col ul {
-            list-style: none;
-            margin-top: 8px;
-        }
+    color:white;
+}
 
-        .footer-col li {
-            margin-bottom: 14px;
-        }
+/* TOP AREA */
 
-        .footer-col a {
-            text-decoration: none;
-            color: #4a5b6e;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            display: inline-block;
-        }
+.footer-top{
 
-        .footer-col a:hover {
-            color: #0f8b6e;
-            transform: translateX(3px);
-        }
+    display:flex;
 
-        /* social icons + newsletter area */
-        .footer-newsletter {
-            margin-top: 20px;
-        }
+    justify-content:space-between;
 
-        .newsletter-text {
-            color: #4a5b6e;
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
+    align-items:center;
 
-        .newsletter-form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 16px 0 20px;
-        }
+    margin-bottom:70px;
+}
 
-        .newsletter-form input {
-            flex: 1;
-            min-width: 150px;
-            padding: 12px 16px;
-            border-radius: 40px;
-            border: 1px solid #dce5e2;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            background: #ffffff;
-            transition: 0.2s;
-        }
+/* LOGO */
 
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: #0f8b6e;
-            box-shadow: 0 0 0 3px rgba(15, 139, 110, 0.1);
-        }
+.logo-text{
 
-        .newsletter-form button {
-            background: #083b44;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            color: white;
-            font-weight: 700;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: 0.25s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+    position:relative;
 
-        .newsletter-form button:hover {
-            background: #0e5b68;
-            transform: translateY(-2px);
-        }
+    font-size:3rem;
 
-        .social-icons {
-            display: flex;
-            gap: 18px;
-            margin: 24px 0 12px;
-        }
+    font-weight:700;
 
-        .social-icons a {
-            background: #f1f5f9;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #2c5f6b;
-            font-size: 1.2rem;
-            transition: all 0.25s;
-            text-decoration: none;
-        }
+    color:white;
 
-        .social-icons a:hover {
-            background: #083b44;
-            color: white;
-            transform: translateY(-3px);
-        }
+    display:inline-block;
 
-        /* app badges / store links (optional modern touch) */
-        .store-badges {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
+    padding-top:25px;
+}
 
-        .store-badge {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 6px 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid #e2edeb;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #1c4e5a;
-            text-decoration: none;
-            transition: 0.2s;
-        }
+.logo-text .arc{
 
-        .store-badge i {
-            font-size: 1.2rem;
-        }
+    position:absolute;
 
-        .store-badge:hover {
-            background: #083b44;
-            color: white;
-            border-color: #083b44;
-        }
+    width:95px;
 
-        /* footer bottom bar */
-        .footer-bottom {
-            border-top: 1px solid #eef2f0;
-            padding-top: 32px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
+    height:45px;
 
-        .copyright {
-            color: #7c8b99;
-            font-size: 0.85rem;
-        }
+    border-top:6px solid #ff7b00;
 
-        .legal-links {
-            display: flex;
-            gap: 28px;
-            flex-wrap: wrap;
-        }
+    border-left:6px solid transparent;
 
-        .legal-links a {
-            text-decoration: none;
-            color: #5e6f82;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+    border-right:6px solid transparent;
 
-        .legal-links a:hover {
-            color: #0f8b6e;
-        }
+    border-radius:100px 100px 0 0;
 
-        /* responsive tweaks */
-        @media (max-width: 768px) {
-            .site-footer {
-                padding: 50px 0 28px;
-            }
-            .footer-grid {
-                gap: 40px;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-            .legal-links {
-                justify-content: center;
-            }
-            .newsletter-form {
-                flex-direction: column;
-            }
-            .newsletter-form button {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+    top:0;
 
-        @media (max-width: 480px) {
-            .footer-container {
-                width: 88%;
-            }
-            .footer-col h4:after {
-                width: 28px;
-            }
-        }
+    left:5px;
+}
 
-        /* additional minor spacing */
-        .footer-col p {
-            color: #5b6f82;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin: 12px 0;
-        }
+/* SOCIAL */
+
+.footer-social{
+
+    display:flex;
+
+    gap:32px;
+}
+
+.footer-social a{
+
+    color:white;
+
+    font-size:1.7rem;
+
+    transition:0.3s;
+}
+
+.footer-social a:hover{
+
+    opacity:0.7;
+}
+
+/* GRID */
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:80px;
+
+    margin-bottom:70px;
+}
+
+/* COLUMN */
+
+.footer-column h3{
+
+    font-size:1.8rem;
+
+    margin-bottom:30px;
+
+    font-weight:700;
+}
+
+.footer-column ul{
+
+    list-style:none;
+}
+
+.footer-column ul li{
+
+    margin-bottom:20px;
+}
+
+.footer-column ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:1.18rem;
+
+    line-height:1.6;
+
+    transition:0.3s;
+}
+
+.footer-column ul li a:hover{
+
+    opacity:0.75;
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,0.12);
+}
+
+/* LINKS */
+
+.footer-links{
+
+    display:flex;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1rem;
+}
+
+/* COPYRIGHT */
+
+.footer-copy{
+
+    color:#d9d9d9;
+
+    font-size:1rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+
+    .workday-footer{
+
+        padding:50px 25px;
+    }
+
+    .footer-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:35px;
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .footer-links{
+
+        gap:18px;
+    }
+
+    .logo-text{
+
+        font-size:2.4rem;
+    }
+}
 </style>
 </head>
 <body>
@@ -1714,124 +1692,198 @@ footer{
     </div>
 
     <!-- ==================== ONLY FOOTER SECTION ==================== -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <!-- main grid columns -->
-            <div class="footer-grid">
-                <!-- column 1: product & features -->
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#">Skills & Knowledge Assessment</a></li>
-                        <li><a href="#">Online Quiz Maker</a></li>
-                        <li><a href="#">Easy Test Maker</a></li>
-                        <li><a href="#">Exam Software</a></li>
-                        <li><a href="#">AI-Powered Question Creation</a></li>
-                        <li><a href="#">Insights & Analytics</a></li>
-                        <li><a href="#">Smart Proctoring</a></li>
-                        <li><a href="#">Microsoft Teams Quiz Maker</a></li>
-                        <li><a href="#">Integrations & API</a></li>
-                        <li><a href="#">Compare Plans</a></li>
-                    </ul>
-                </div>
+   
 
-                <!-- column 2: for business use -->
-                <div class="footer-col">
-                    <h4>For Business</h4>
-                    <ul>
-                        <li><a href="#">Human Resources</a></li>
-                        <li><a href="#">Training Companies & Departments</a></li>
-                        <li><a href="#">Certification Programs</a></li>
-                        <li><a href="#">Sales & Customer Service</a></li>
-                        <li><a href="#">Language Schools</a></li>
-                        <li><a href="#">Remote Hiring</a></li>
-                    </ul>
-                    <h4 style="margin-top: 28px;">For Education</h4>
-                    <ul>
-                        <li><a href="#">Teachers & Educators</a></li>
-                        <li><a href="#">Schools & K-12</a></li>
-                        <li><a href="#">Universities & Colleges</a></li>
-                        <li><a href="#">E-Learning Platforms</a></li>
-                    </ul>
-                </div>
+    <!-- =========================
+     REPLACE YOUR OLD FOOTER
+     WITH THIS COMPLETE CODE
+========================= -->
 
-                <!-- column 3: use cases and resources -->
-                <div class="footer-col">
-                    <h4>Use Cases</h4>
-                    <ul>
-                        <li><a href="#">Recruitment & Pre-employment</a></li>
-                        <li><a href="#">Employee Training</a></li>
-                        <li><a href="#">Customer Service Assessment</a></li>
-                        <li><a href="#">Certification Exams</a></li>
-                        <li><a href="#">Safety Procedures</a></li>
-                        <li><a href="#">Formative Assessment</a></li>
-                        <li><a href="#">Homework & Quizzes</a></li>
-                        <li><a href="#">Competitions & Contests</a></li>
-                    </ul>
-                </div>
+<footer class="workday-footer">
 
-                <!-- column 4: resources + support + newsletter & socials -->
-                <div class="footer-col">
-                    <h4>Resources & Support</h4>
-                    <ul>
-                        <li><a href="#">Help Center / Guides</a></li>
-                        <li><a href="#">Customer Stories</a></li>
-                        <li><a href="#">Webinars & Events</a></li>
-                        <li><a href="#">API Documentation</a></li>
-                        <li><a href="#">System Status</a></li>
-                        <li><a href="#">Contact Support</a></li>
-                    </ul>
-                    
-                    <!-- newsletter subscription (modern interactive element) -->
-                    <div class="footer-newsletter">
-                        <h4 style="margin-top: 16px;">Stay updated</h4>
-                        <div class="newsletter-text">
-                            Get the latest insights, product updates, and AI assessment tips.
-                        </div>
-                        <form class="newsletter-form" action="#" method="post">
-                            <input type="email" placeholder="Your work email" required>
-                            <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
+    <!-- TOP AREA -->
 
-                    <!-- social media links -->
-                    <div class="social-icons">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
+    <div class="footer-top">
 
-                    <!-- optional app/trust badges (makes footer richer) -->
-                    <div class="store-badges">
-                        <a href="#" class="store-badge"><i class="fab fa-microsoft"></i> Teams App</a>
-                        <a href="#" class="store-badge"><i class="fas fa-mobile-alt"></i> Mobile Ready</a>
-                        <a href="#" class="store-badge"><i class="fas fa-shield-alt"></i> GDPR Compliant</a>
-                    </div>
-                </div>
+        <!-- LOGO -->
+
+        <div class="footer-logo">
+
+            <div class="logo-text">
+                <span class="arc"></span>
+                Aparaitech
             </div>
 
-            <!-- bottom bar: copyright + legal links -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    © 2026 Testportal — AI-powered skills and knowledge assessment platform
-                </div>
-                <div class="legal-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Cookie Settings</a>
-                    <a href="#">Accessibility</a>
-                    <a href="#">Security & Trust</a>
-                </div>
-            </div>
-
-            <!-- extra micro element (global footprint) optional -->
-            <div style="text-align: center; margin-top: 30px; font-size: 0.75rem; color: #98a9b9;">
-                <i class="fas fa-globe-americas"></i> Serving 2git branchM+ users worldwide · Enterprise-grade security & smart proctoring
-            </div>
         </div>
-    </footer>
+
+        <!-- SOCIAL ICONS -->
+
+        <div class="footer-social">
+
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER GRID -->
+
+    <div class="footer-grid">
+
+        <!-- COLUMN 1 -->
+
+        <div class="footer-column">
+
+            <h3>Products</h3>
+
+            <ul>
+
+                <li><a href="#">For Finance</a></li>
+
+                <li><a href="#">For HR</a></li>
+
+                <li><a href="#">For Planning</a></li>
+
+                <li><a href="#">Platform</a></li>
+
+                <li><a href="#">Artificial Intelligence</a></li>
+
+                <li><a href="#">Why Aparaitech</a></li>
+
+                <li><a href="#">Aparaitech Suite</a></li>
+
+                <li><a href="#">Marketplace ↗</a></li>
+
+                <li><a href="#">Services</a></li>
+
+                <li><a href="#">Partners</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="footer-column">
+
+            <h3>Industries</h3>
+
+            <ul>
+
+                <li><a href="#">Financial Services</a></li>
+
+                <li><a href="#">Healthcare</a></li>
+
+                <li><a href="#">Higher Education</a></li>
+
+                <li><a href="#">Manufacturing</a></li>
+
+                <li><a href="#">Professional & Business Services</a></li>
+
+                <li><a href="#">Public Sector</a></li>
+
+                <li><a href="#">Retail</a></li>
+
+                <li><a href="#">Technology</a></li>
+
+                <li><a href="#">See More Industries</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="footer-column">
+
+            <h3>Learn</h3>
+
+            <ul>
+
+                <li><a href="#">Customer Stories</a></li>
+
+                <li><a href="#">Events</a></li>
+
+                <li><a href="#">Webinars</a></li>
+
+                <li><a href="#">Demos</a></li>
+
+                <li><a href="#">Resource Library</a></li>
+
+                <li><a href="#">Training & Certifications</a></li>
+
+                <li><a href="#">Topics Hub</a></li>
+
+                <li><a href="#">Blog ↗</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="footer-column">
+
+            <h3>Company</h3>
+
+            <ul>
+
+                <li><a href="#">Company Profile</a></li>
+
+                <li><a href="#">About Aparaitech</a></li>
+
+                <li><a href="#">Our Story</a></li>
+
+                <li><a href="#">Corporate Responsibility</a></li>
+
+                <li><a href="#">Investor Relations ↗</a></li>
+
+                <li><a href="#">Newsroom ↗</a></li>
+
+                <li><a href="#">Perspectives</a></li>
+
+                <li><a href="#">Careers</a></li>
+
+                <li><a href="#">Login Help</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <div class="footer-links">
+
+            <a href="#">Legal</a>
+
+            <a href="#">Privacy</a>
+
+            <a href="#">Accessibility</a>
+
+            <a href="#">Subscriptions</a>
+
+            <a href="#">Cookie Preferences</a>
+
+        </div>
+
+        <div class="footer-copy">
+
+            © 2026 Aparaitech, Inc.
+
+        </div>
+
+    </div>
+
+</footer>
+
     <!-- ==================== END FOOTER ==================== -->
 </body>
 </html>
