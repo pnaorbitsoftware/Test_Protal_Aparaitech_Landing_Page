@@ -958,6 +958,627 @@ RESPONSIVE
 
 }
 
+/* =========================================
+   TESTIMONIAL SECTION
+========================================= */
+.testimonial-section{
+
+    width:100%;
+
+    padding:80px 80px;
+
+    background:#f5f5f5;
+}
+
+/* MAIN BOX */
+
+.testimonial-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    background:#f6e6a6;
+
+    border-radius:35px;
+
+    padding:100px 80px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:80px;
+
+    align-items:flex-start;
+}
+
+/* LEFT */
+
+.testimonial-left h2{
+
+    font-size:3.5rem;
+
+    line-height:1.1;
+
+    color:#004b57;
+
+    font-weight:800;
+}
+
+/* RIGHT */
+
+.testimonial-right{
+
+    max-width:900px;
+}
+
+/* TAG */
+
+.tag{
+
+    display:inline-block;
+
+    background:#f2d867;
+
+    color:#004b57;
+
+    padding:10px 20px;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+}
+
+/* COMPANY */
+
+.testimonial-right h3{
+
+    font-size:3rem;
+
+    color:#004b57;
+
+    margin-bottom:30px;
+
+    font-weight:800;
+}
+
+/* TEXT */
+
+.testimonial-text{
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+    color:#18434c;
+
+    margin-bottom:45px;
+}
+
+/* NAME */
+
+.testimonial-right h4{
+
+    font-size:2rem;
+
+    color:#004b57;
+
+    margin-bottom:10px;
+
+    font-weight:800;
+}
+
+/* ROLE */
+
+.role{
+
+    font-size:1.3rem;
+
+    color:#18434c;
+}
+
+/* BUTTONS */
+
+.testimonial-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:50px;
+}
+
+.testimonial-buttons button{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:2px solid #004b57;
+
+    background:transparent;
+
+    color:#004b57;
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.testimonial-buttons button:hover{
+
+    background:#004b57;
+
+    color:white;
+}
+
+/* CIRCLE DESIGN */
+
+.testimonial-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border:70px solid rgba(255,255,255,0.35);
+
+    border-radius:50%;
+
+    left:-220px;
+
+    bottom:-220px;
+}
+
+.testimonial-container::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border:60px solid rgba(255,255,255,0.25);
+
+    border-radius:50%;
+
+    left:-120px;
+
+    bottom:-120px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .testimonial-container{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+    }
+
+    .testimonial-left h2{
+
+        font-size:3rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .testimonial-section{
+
+        padding:40px 20px;
+    }
+
+    .testimonial-container{
+
+        padding:60px 30px;
+    }
+
+    .testimonial-left h2{
+
+        font-size:2.3rem;
+    }
+
+    .testimonial-right h3{
+
+        font-size:2rem;
+    }
+
+    .testimonial-text{
+
+        font-size:1rem;
+
+        line-height:1.8;
+    }
+
+    .testimonial-right h4{
+
+        font-size:1.5rem;
+    }
+
+    .role{
+
+        font-size:1rem;
+    }
+
+    .testimonial-buttons button{
+
+        width:50px;
+
+        height:50px;
+    }
+}
+
+
+
+
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section{
+
+    width:100%;
+
+    padding:80px 80px;
+
+    background:#f5f5f5;
+}
+
+/* MAIN BOX */
+
+.cta-content{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    background:#004c57;
+
+    border-radius:35px;
+
+    padding:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+    overflow:hidden;
+}
+
+/* LEFT SIDE */
+
+.cta-left{
+
+    flex:1;
+
+    max-width:550px;
+}
+
+.cta-left h1{
+
+    font-size:3.4rem;
+
+    line-height:1.1;
+
+    color:white;
+
+    font-weight:800;
+
+    margin-bottom:30px;
+}
+
+.cta-left h1 span{
+
+    color:#b8f3b0;
+}
+
+.cta-left p{
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    color:#d6e6e8;
+
+    margin-bottom:40px;
+}
+
+/* BUTTON */
+
+.cta-btn{
+
+    display:inline-block;
+
+    background:#f5e5a4;
+
+    color:#003f4c;
+
+    padding:18px 38px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    transition:0.3s;
+}
+
+.cta-btn:hover{
+
+    transform:translateY(-3px);
+}
+
+/* FEATURES */
+
+.cta-features{
+
+    display:flex;
+
+    gap:40px;
+
+    margin-top:55px;
+
+    flex-wrap:wrap;
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+}
+
+.feature i{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.12);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:0.9rem;
+}
+
+/* RIGHT SIDE */
+
+.cta-right{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+}
+
+/* CARD */
+
+.quiz-card{
+
+    width:320px;
+
+    background:white;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.quiz-card img{
+
+    width:100%;
+
+    height:210px;
+
+    object-fit:cover;
+}
+
+.quiz-body{
+
+    padding:22px;
+}
+
+.quiz-body h3{
+
+    color:#004c57;
+
+    font-size:1.6rem;
+
+    margin-bottom:18px;
+}
+
+.quiz-body p{
+
+    color:#52656d;
+
+    line-height:1.6;
+
+    margin-bottom:22px;
+
+    font-size:1rem;
+}
+
+/* OPTIONS */
+
+.quiz-body ul{
+
+    list-style:none;
+}
+
+.quiz-body ul li{
+
+    margin-bottom:14px;
+
+    color:#5f6f74;
+
+    font-size:1rem;
+
+    position:relative;
+
+    padding-left:28px;
+}
+
+.quiz-body ul li::before{
+
+    content:"";
+
+    width:15px;
+
+    height:15px;
+
+    border:2px solid #d4d4d4;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    left:0;
+
+    top:4px;
+}
+
+.quiz-body ul li.correct{
+
+    color:#18b36b;
+
+    font-weight:700;
+}
+
+.quiz-body ul li.correct::before{
+
+    background:#18b36b;
+
+    border-color:#18b36b;
+}
+
+/* ANSWER BOX */
+
+.answer-box{
+
+    background:#eef5f6;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    color:#446067;
+
+    line-height:1.6;
+
+    font-size:0.95rem;
+}
+
+/* SECOND CARD */
+
+.second-card{
+
+    opacity:0.78;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+    .cta-content{
+
+        flex-direction:column;
+    }
+
+    .cta-left{
+
+        max-width:100%;
+    }
+
+    .cta-right{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+    }
+}
+
+@media(max-width:768px){
+
+    .cta-section{
+
+        padding:40px 20px;
+    }
+
+    .cta-content{
+
+        padding:45px 25px;
+    }
+
+    .cta-left h1{
+
+        font-size:2.5rem;
+    }
+
+    .cta-left p{
+
+        font-size:1rem;
+    }
+
+    .quiz-card{
+
+        width:100%;
+    }
+
+    .cta-features{
+
+        gap:20px;
+    }
+}
 </style>
 </head>
 
@@ -971,6 +1592,7 @@ RESPONSIVE
 
             <div class="logo">
                 APARAI<span>TECH SOFTWARE</span>
+                <span></span>
             </div>
 
             <div class="nav-links">
@@ -1514,6 +2136,79 @@ RESPONSIVE
     </div>
 
 </section>
+<!-- TESTIMONIAL SECTION -->
+<section class="testimonial-section">
+
+    <div class="testimonial-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="testimonial-left">
+
+            <h2>
+                What our users say
+            </h2>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="testimonial-right">
+
+            <span class="tag">
+                Business
+            </span>
+
+            <h3>DHL</h3>
+
+            <p class="testimonial-text">
+
+                Our company has been assessing the knowledge of our employees and
+                delivery persons to guarantee professional customer service.
+                Testportal proved to be a great platform to support this
+                undertaking. We received a clear and simple test-creation interface
+                that allows complete control over our assessments.
+
+                The ability to upload a database is also very helpful, as it saves
+                us a lot of work. The platform makes the test easily accessible
+                for the respondents.
+
+                During the assessment, we can monitor who has finished already
+                and what their score was. After the test, we receive statistics
+                that are very helpful in data analysis and drawing conclusions
+                about the level of knowledge of our employees.
+
+                We wholeheartedly recommend Testportal to everyone who would like
+                to assess the knowledge of their students or employees in small
+                and large enterprises.
+
+            </p>
+
+            <h4>Hirek Chmielowiec</h4>
+
+            <span class="role">
+                OPS Trainer
+            </span>
+
+            <!-- BUTTONS -->
+
+            <div class="testimonial-buttons">
+
+                <button>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <button>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- BLOG -->
 
@@ -1590,6 +2285,120 @@ RESPONSIVE
                     <p>
                         Discover modern solutions for scalable education.
                     </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     CTA SECTION
+========================= -->
+
+<section class="cta-section">
+
+    <div class="cta-content">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="cta-left">
+
+            <h1>
+                Create <span>your first</span> online
+                test, quiz or exam
+            </h1>
+
+            <p>
+                Explore all of Testportal assessment software features
+                and streamline your online assessments.
+                It's on the house. You're welcome.
+            </p>
+
+            <a href="#" class="cta-btn">
+                Sign up free
+            </a>
+
+            <div class="cta-features">
+
+                <div class="feature">
+
+                    <i class="fas fa-check"></i>
+
+                    <span>Free registration</span>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fas fa-check"></i>
+
+                    <span>AI-driven features</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="cta-right">
+
+            <!-- CARD 1 -->
+
+            <div class="quiz-card">
+
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop" alt="pizza">
+
+                <div class="quiz-body">
+
+                    <h3>Question 1</h3>
+
+                    <p>
+                        What type of pizza is presented
+                        on the image?
+                    </p>
+
+                    <ul>
+
+                        <li class="correct">Margherita</li>
+
+                        <li>Pepperoni</li>
+
+                        <li>Hawaii</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="quiz-card second-card">
+
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="team meeting" alt="math">
+
+                <div class="quiz-body">
+
+                    <h3>Question 2</h3>
+
+                    <p>
+                        What is the radius of a circle
+                        that has a circumference of 3.14 meters?
+                    </p>
+
+                    <div class="answer-box">
+
+                        Circumference = 2πr.<br>
+                        Given 3.14m.<br>
+                        Therefore r = 0.5m
+
+                    </div>
 
                 </div>
 
