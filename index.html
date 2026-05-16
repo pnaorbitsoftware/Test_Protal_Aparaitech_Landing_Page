@@ -201,6 +201,35 @@
         }
         .tab.active { background: var(--dark); color: white; border-color: var(--dark); }
 
+        /* Education grid — 3 cols top row, 2 centered bottom row */
+        #tab-education {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        #tab-education .edu-bottom-row {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 380px));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Education icon wrapper */
+        .edu-icon {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            min-height: 44px;
+        }
+
+        /* Tab panel fade animation */
+        .use-cases-grid {
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
         /* ===== USE CASE CARDS ===== */
         .use-cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .use-card {
@@ -552,7 +581,7 @@
 </div>
 
 <!-- USE CASES -->
-<section class="section">
+<section class="section" id="use-cases-section">
     <div class="container">
         <div style="text-align:center;">
             <span class="section-label">One platform, all your needs</span>
@@ -560,10 +589,12 @@
             <p class="section-sub center">One assessment platform for Business &amp; Education — built for the way you actually work.</p>
         </div>
         <div class="tabs">
-            <div class="tab active">Business</div>
-            <div class="tab">Education</div>
+            <div class="tab active" data-tab="business">Business</div>
+            <div class="tab" data-tab="education">Education</div>
         </div>
-        <div class="use-cases-grid">
+
+        <!-- BUSINESS CARDS -->
+        <div class="use-cases-grid" id="tab-business">
             <div class="use-card">
                 <div class="use-card-icon icon-orange"><i class="fas fa-magnifying-glass"></i></div>
                 <h4>Recruitment</h4>
@@ -606,6 +637,87 @@
                 <p>Streamline your certification and accreditation processes end-to-end, from test to badge.</p>
                 <a href="#" class="learn-link">Learn more →</a>
             </div>
+        </div>
+
+        <!-- EDUCATION CARDS -->
+        <div class="use-cases-grid" id="tab-education" style="display:none;">
+
+            <!-- Quizzes -->
+            <div class="use-card">
+                <div class="edu-icon">
+                    <svg width="56" height="40" viewBox="0 0 56 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#1DB954"/>
+                        <circle cx="36" cy="20" r="20" fill="#F5C842" fill-opacity="0.85"/>
+                    </svg>
+                </div>
+                <h4>Quizzes</h4>
+                <p>Engage your remote students or connected classrooms in a way that's efficient and fun.</p>
+                <a href="#" class="learn-link">Learn more →</a>
+            </div>
+
+            <!-- Exams -->
+            <div class="use-card">
+                <div class="edu-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#C9B8F0"/>
+                        <circle cx="20" cy="20" r="10" fill="#1b3328"/>
+                    </svg>
+                </div>
+                <h4>Exams</h4>
+                <p>Test skills and knowledge in a professional and no-distraction environment.</p>
+                <a href="#" class="learn-link">Learn more →</a>
+            </div>
+
+            <!-- Homework -->
+            <div class="use-card">
+                <div class="edu-icon">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- triangle mountain shape -->
+                        <polygon points="22,4 42,38 2,38" fill="#1b3328"/>
+                        <!-- green hill/base -->
+                        <ellipse cx="22" cy="38" rx="16" ry="7" fill="#1DB954"/>
+                    </svg>
+                </div>
+                <h4>Homework</h4>
+                <p>Give friendly and interactive after school assignments.</p>
+                <a href="#" class="learn-link">Learn more →</a>
+            </div>
+
+            <!-- Competition + Formative Assessment — centered bottom row -->
+            <div class="edu-bottom-row">
+
+            <!-- Competition -->
+            <div class="use-card">
+                <div class="edu-icon">
+                    <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- left arrow/bowtie shape -->
+                        <polygon points="0,18 22,0 22,36" fill="#1b3328"/>
+                        <!-- right arrow/bowtie shape -->
+                        <polygon points="52,18 30,0 30,36" fill="#1DB954"/>
+                    </svg>
+                </div>
+                <h4>Competition</h4>
+                <p>Empower learners, challenge them and encourage discussions to experience amazing results.</p>
+                <a href="#" class="learn-link">Learn more →</a>
+            </div>
+
+            <!-- Formative Assessment -->
+            <div class="use-card">
+                <div class="edu-icon">
+                    <svg width="52" height="40" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- yellow left half-circle -->
+                        <path d="M26,0 A20,20 0 0,0 26,40 Z" fill="#F5C842"/>
+                        <!-- purple right half-circle -->
+                        <path d="M26,4 A16,16 0 0,1 26,36 Z" fill="#C9B8F0"/>
+                    </svg>
+                </div>
+                <h4>Formative Assessment</h4>
+                <p>Positive motivation, encouraging feedback, and equal opportunities with a new educational approach.</p>
+                <a href="#" class="learn-link">Learn more →</a>
+            </div>
+
+            </div><!-- end edu-bottom-row -->
+
         </div>
     </div>
 </section>
@@ -872,11 +984,31 @@
 </footer>
 
 <script>
-    // Tab switching (Use Cases)
-    document.querySelectorAll('.tab').forEach(tab => {
+    // Tab switching (Use Cases) — Business / Education
+    const tabs = document.querySelectorAll('.tab[data-tab]');
+    const businessGrid = document.getElementById('tab-business');
+    const educationGrid = document.getElementById('tab-education');
+
+    tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
+
+            const target = tab.dataset.tab;
+            if (target === 'business') {
+                businessGrid.style.display = 'grid';
+                educationGrid.style.display = 'none';
+                // re-trigger animation
+                businessGrid.style.animation = 'none';
+                businessGrid.offsetHeight;
+                businessGrid.style.animation = '';
+            } else {
+                businessGrid.style.display = 'none';
+                educationGrid.style.display = 'grid';
+                educationGrid.style.animation = 'none';
+                educationGrid.offsetHeight;
+                educationGrid.style.animation = '';
+            }
         });
     });
 
