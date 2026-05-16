@@ -80,10 +80,7 @@
         .lang-pill { display: flex; align-items: center; gap: 5px; padding: 6px 13px; border-radius: 50px; border: 1.5px solid var(--border); font-size: 0.85rem; font-weight: 500; cursor: pointer; }
 
         /* ===== HERO ===== */
-        .hero-section {
-            padding: 56px 0 20px;
-            background: #ffffff;
-        }
+        .hero-section { padding: 56px 0 20px; background: #ffffff; }
         .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
         .hero-eyebrow {
             display: inline-flex; align-items: center; gap: 7px;
@@ -101,7 +98,6 @@
             background-clip: text; -webkit-background-clip: text; color: transparent;
             margin-bottom: 20px;
         }
-        .hero-title em { font-style: normal; }
         .hero-sub { font-size: 1.1rem; color: var(--muted); margin-bottom: 32px; max-width: 480px; }
         .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
         .hero-note { font-size: 0.8rem; color: var(--muted); }
@@ -109,25 +105,15 @@
 
         /* Access card */
         .access-card {
-            background: white;
-            border-radius: 28px;
-            padding: 0;
-            box-shadow: 0 16px 48px rgba(0,0,0,0.09);
-            overflow: hidden;
+            background: white; border-radius: 28px; padding: 0;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.09); overflow: hidden;
             border: 1px solid var(--border);
         }
         .access-card-preview {
             background: linear-gradient(135deg, #1a3d26 0%, #0d5c2e 100%);
-            padding: 28px 28px 20px;
-            position: relative;
-            overflow: hidden;
+            padding: 28px 28px 20px; position: relative; overflow: hidden;
         }
-        .preview-mockup {
-            background: white;
-            border-radius: 14px;
-            padding: 18px;
-            position: relative;
-        }
+        .preview-mockup { background: white; border-radius: 14px; padding: 18px; position: relative; }
         .preview-bar { display: flex; gap: 6px; margin-bottom: 14px; }
         .preview-dot { width: 10px; height: 10px; border-radius: 50%; }
         .preview-content { display: flex; flex-direction: column; gap: 8px; }
@@ -135,11 +121,7 @@
         .preview-progress { height: 6px; border-radius: 3px; background: #e8f5ec; margin: 6px 0; overflow: hidden; }
         .preview-progress-fill { height: 100%; border-radius: 3px; background: var(--green); }
         .preview-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-        .preview-option {
-            padding: 8px 10px; border-radius: 8px;
-            background: #f6faf7; border: 1.5px solid #d4eadb;
-            font-size: 0.72rem; font-weight: 500;
-        }
+        .preview-option { padding: 8px 10px; border-radius: 8px; background: #f6faf7; border: 1.5px solid #d4eadb; font-size: 0.72rem; font-weight: 500; }
         .preview-option.selected { background: var(--green-light); border-color: var(--green); color: var(--green); }
         .preview-chip {
             position: absolute; top: 16px; right: -4px;
@@ -147,168 +129,69 @@
             font-size: 0.7rem; font-weight: 700;
             padding: 4px 12px 4px 10px; border-radius: 50px 0 0 50px;
         }
-
         .access-card-body { padding: 24px 28px 28px; }
         .access-card-body h3 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin-bottom: 6px; font-weight: 600; }
         .access-card-body p { font-size: 0.88rem; color: var(--muted); margin-bottom: 16px; }
         .access-input-row { display: flex; gap: 10px; }
-        .access-input {
-            flex: 1; padding: 11px 16px;
-            border-radius: 50px; border: 1.5px solid var(--border);
-            font-family: 'Inter', sans-serif; font-size: 0.9rem;
-            outline: none; transition: border-color 0.2s;
-        }
+        .access-input { flex: 1; padding: 11px 16px; border-radius: 50px; border: 1.5px solid var(--border); font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
         .access-input:focus { border-color: var(--green); }
         .btn-sm { padding: 11px 18px; font-size: 0.85rem; }
 
-        /* ===== LOGOS STRIP — ANIMATED MARQUEE ===== */
-        .logos-strip {
-            padding: 48px 0 32px;
-            border-bottom: 1px solid var(--border);
-            overflow: hidden;
-        }
-        .logos-label {
-            text-align: center;
-            font-size: 0.82rem; color: var(--muted);
-            margin-bottom: 24px;
-            text-transform: uppercase; letter-spacing: 1px; font-weight: 500;
-        }
-
-        /* Fade edge masks */
-        .logos-track-wrap {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-        .logos-track-wrap::before,
-        .logos-track-wrap::after {
-            content: '';
-            position: absolute; top: 0; bottom: 0;
-            width: 100px; z-index: 2; pointer-events: none;
-        }
-        .logos-track-wrap::before {
-            left: 0;
-            background: linear-gradient(to right, #ffffff 0%, transparent 100%);
-        }
-        .logos-track-wrap::after {
-            right: 0;
-            background: linear-gradient(to left, #ffffff 0%, transparent 100%);
-        }
-
-        /* Scrolling track */
-        .logos-track {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            width: max-content;
-            animation: scrollLogos 26s linear infinite;
-        }
+        /* ===== LOGOS STRIP ===== */
+        .logos-strip { padding: 48px 0 32px; border-bottom: 1px solid var(--border); overflow: hidden; }
+        .logos-label { text-align: center; font-size: 0.82rem; color: var(--muted); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+        .logos-track-wrap { position: relative; overflow: hidden; width: 100%; }
+        .logos-track-wrap::before, .logos-track-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none; }
+        .logos-track-wrap::before { left: 0; background: linear-gradient(to right, #ffffff 0%, transparent 100%); }
+        .logos-track-wrap::after { right: 0; background: linear-gradient(to left, #ffffff 0%, transparent 100%); }
+        .logos-track { display: flex; align-items: center; gap: 16px; width: max-content; animation: scrollLogos 26s linear infinite; }
         .logos-track:hover { animation-play-state: paused; }
-
-        @keyframes scrollLogos {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Individual chip */
-        .logo-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 9px 22px;
-            border-radius: 40px;
-            border: 1.5px solid #dde8e0;
-            background: white;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            color: var(--muted);
-            white-space: nowrap;
-            cursor: default;
-            transition: border-color 0.22s, color 0.22s, transform 0.22s, box-shadow 0.22s;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-        }
-        .logo-chip:hover {
-            color: var(--text);
-            border-color: var(--green);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(31,139,76,0.12);
-        }
-
-        /* Colored dot per brand */
-        .logo-dot {
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            opacity: 0.85;
-        }
+        @keyframes scrollLogos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .logo-chip { display: inline-flex; align-items: center; gap: 9px; padding: 9px 22px; border-radius: 40px; border: 1.5px solid #dde8e0; background: white; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; color: var(--muted); white-space: nowrap; cursor: default; transition: border-color 0.22s, color 0.22s, transform 0.22s, box-shadow 0.22s; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+        .logo-chip:hover { color: var(--text); border-color: var(--green); transform: translateY(-3px); box-shadow: 0 6px 18px rgba(31,139,76,0.12); }
+        .logo-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; opacity: 0.85; }
 
         /* ===== SECTION STYLES ===== */
         .section { padding: 80px 0; }
-        .section-label {
-            display: inline-block; background: var(--green-light);
-            color: var(--green); font-size: 0.78rem; font-weight: 700;
-            letter-spacing: 1.5px; text-transform: uppercase;
-            padding: 4px 14px; border-radius: 50px;
-            margin-bottom: 14px;
-        }
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.2rem; font-weight: 600;
-            color: var(--dark); line-height: 1.2;
-            margin-bottom: 12px; letter-spacing: -0.02em;
-        }
+        .section-label { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 50px; margin-bottom: 14px; }
+        .section-title { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 600; color: var(--dark); line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.02em; }
         .section-sub { font-size: 1rem; color: var(--muted); max-width: 560px; margin-bottom: 48px; }
         .section-title.center, .section-sub.center { text-align: center; margin-left: auto; margin-right: auto; }
 
-        /* ===== TABS (Business / Education) ===== */
+        /* ===== TABS ===== */
         .tabs { display: flex; gap: 8px; margin-bottom: 36px; justify-content: center; }
-        .tab {
-            padding: 9px 24px; border-radius: 50px;
-            border: 1.5px solid var(--border);
-            font-weight: 600; font-size: 0.9rem;
-            cursor: pointer; background: white;
-            transition: all 0.18s;
-        }
+        .tab { padding: 9px 24px; border-radius: 50px; border: 1.5px solid var(--border); font-weight: 600; font-size: 0.9rem; cursor: pointer; background: white; transition: all 0.18s; }
         .tab.active { background: var(--dark); color: white; border-color: var(--dark); }
-
-        /* Education grid */
-        #tab-education { grid-template-columns: repeat(3, 1fr); }
-        #tab-education .edu-bottom-row {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 380px));
-            gap: 20px;
-            justify-content: center;
-        }
-        .edu-icon { margin-bottom: 18px; display: flex; align-items: center; min-height: 44px; }
-
-        .use-cases-grid { animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
 
         /* ===== USE CASE CARDS ===== */
         .use-cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .use-cases-grid { animation: fadeIn 0.3s ease; }
+
         .use-card {
             background: white; border: 1.5px solid var(--border);
-            border-radius: 20px; padding: 24px 22px;
-            transition: all 0.2s; cursor: pointer;
+            border-radius: 20px; padding: 28px 24px 24px;
+            transition: all 0.2s; cursor: pointer; position: relative;
+            display: flex; flex-direction: column;
         }
-        .use-card:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(26,122,69,0.1); }
-        .use-card-icon {
-            width: 44px; height: 44px; border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; margin-bottom: 14px;
-        }
-        .icon-orange { background: #fef0e3; color: var(--orange); }
-        .icon-purple { background: #ede9ff; color: #7c3aed; }
-        .icon-green { background: var(--green-light); color: var(--green); }
-        .use-card h4 { font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
-        .use-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 14px; }
-        .learn-link { font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: none; }
-        .learn-link:hover { text-decoration: underline; }
+        .use-card:hover { border-color: #b8dfc8; transform: translateY(-4px); box-shadow: 0 12px 28px rgba(26,122,69,0.1); }
+
+        /* SVG icon containers */
+        .use-card-icon-wrap { margin-bottom: 20px; min-height: 52px; display: flex; align-items: center; }
+
+        .use-card h4 { font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; color: var(--dark); }
+        .use-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: auto; padding-bottom: 20px; }
+        .learn-link { font-size: 0.9rem; font-weight: 700; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 6px; margin-top: 16px; }
+        .learn-link:hover { color: var(--green); }
+        .learn-link .arrow { transition: transform 0.2s; }
+        .use-card:hover .learn-link .arrow { transform: translateX(4px); }
+
+        /* Centered last card */
+        .use-card-centered { grid-column: 2; }
+
+        /* ===== EDUCATION CARDS ===== */
+        #tab-education { display: none; }
+        .edu-icon { margin-bottom: 18px; display: flex; align-items: center; min-height: 44px; }
 
         /* ===== BETTER WAY SECTION (dark) ===== */
         .better-section { background: var(--teal-section); padding: 80px 0; }
@@ -316,20 +199,10 @@
         .better-left .section-label { background: rgba(255,255,255,0.1); color: #7fd4a2; }
         .better-left .section-title { color: white; }
         .feature-list { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
-        .feature-pill {
-            display: flex; align-items: center; gap: 10px;
-            padding: 10px 16px; border-radius: 12px;
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-            color: #c8e8d6; font-size: 0.88rem; font-weight: 500;
-        }
+        .feature-pill { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #c8e8d6; font-size: 0.88rem; font-weight: 500; }
         .feature-pill i { color: #5bd68a; width: 16px; }
-
         .better-right { display: flex; flex-direction: column; gap: 16px; }
-        .problem-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px; padding: 24px;
-        }
+        .problem-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 24px; }
         .problem-card h4 { color: white; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .problem-card p { color: #98bfaa; font-size: 0.88rem; line-height: 1.6; }
         .solution-card { background: var(--green); border-radius: 20px; padding: 24px; }
@@ -340,68 +213,29 @@
 
         /* ===== TEAMS SECTION ===== */
         .teams-section { background: #0a1a0f; padding: 70px 0; }
-        .teams-inner {
-            display: flex; align-items: center; gap: 48px;
-            background: #111f17; border-radius: 32px; padding: 48px;
-            border: 1px solid #1e3828;
-        }
+        .teams-inner { display: flex; align-items: center; gap: 48px; background: #111f17; border-radius: 32px; padding: 48px; border: 1px solid #1e3828; }
         .teams-left { flex: 1; }
-        .teams-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(255,255,255,0.07); color: #8ecfa8;
-            padding: 6px 14px; border-radius: 50px;
-            font-size: 0.8rem; font-weight: 600;
-            margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);
-        }
-        .teams-left h2 {
-            font-family: 'Poppins', sans-serif; font-size: 2.2rem;
-            color: white; line-height: 1.2; margin-bottom: 16px; font-weight: 600; letter-spacing: -0.02em;
-        }
+        .teams-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.07); color: #8ecfa8; padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .teams-left h2 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; color: white; line-height: 1.2; margin-bottom: 16px; font-weight: 600; letter-spacing: -0.02em; }
         .teams-left p { color: #7ea890; font-size: 0.95rem; margin-bottom: 24px; }
         .btn-outline-white { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.25); }
         .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.05); }
         .teams-right { flex: 0 0 320px; text-align: center; }
-        .teams-img-mock {
-            background: linear-gradient(135deg, #1c4a2a, #2a6e3e);
-            border-radius: 20px; padding: 32px;
-            position: relative; overflow: hidden;
-        }
-        .teams-img-mock::before {
-            content: ''; position: absolute; inset: 0;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E") repeat;
-        }
+        .teams-img-mock { background: linear-gradient(135deg, #1c4a2a, #2a6e3e); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; }
+        .teams-img-mock::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
         .teams-people { display: flex; justify-content: center; }
-        .person-avatar {
-            width: 52px; height: 52px; border-radius: 50%;
-            border: 3px solid #1c4a2a;
-            font-size: 1.3rem; display: flex; align-items: center; justify-content: center;
-            margin-left: -8px;
-        }
-        .pa1 { background: #3a7d52; }
-        .pa2 { background: #2d6040; }
-        .pa3 { background: #4a9065; }
-        .pa4 { background: #246038; }
+        .person-avatar { width: 52px; height: 52px; border-radius: 50%; border: 3px solid #1c4a2a; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin-left: -8px; }
+        .pa1 { background: #3a7d52; } .pa2 { background: #2d6040; } .pa3 { background: #4a9065; } .pa4 { background: #246038; }
 
         /* ===== SECURITY + TREES ===== */
         .two-col-section { padding: 80px 0; }
         .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .security-card { background: #f4f0ff; border-radius: 24px; padding: 36px; }
-        .security-card .card-icon-wrap {
-            width: 48px; height: 48px; border-radius: 14px;
-            background: #7c3aed; display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 1.2rem; margin-bottom: 20px;
-        }
+        .security-card .card-icon-wrap { width: 48px; height: 48px; border-radius: 14px; background: #7c3aed; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin-bottom: 20px; }
         .security-card h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; margin-bottom: 12px; font-weight: 600; }
         .security-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
-        .trees-card {
-            background: linear-gradient(160deg, #0d5c2e, #1a7a45);
-            border-radius: 24px; padding: 36px; color: white;
-            position: relative; overflow: hidden;
-        }
-        .trees-card::after {
-            content: '🌳'; position: absolute; bottom: -10px; right: -10px;
-            font-size: 9rem; opacity: 0.12;
-        }
+        .trees-card { background: linear-gradient(160deg, #0d5c2e, #1a7a45); border-radius: 24px; padding: 36px; color: white; position: relative; overflow: hidden; }
+        .trees-card::after { content: '🌳'; position: absolute; bottom: -10px; right: -10px; font-size: 9rem; opacity: 0.12; }
         .trees-card h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 600; }
         .trees-card p { color: rgba(255,255,255,0.75); font-size: 0.88rem; margin-bottom: 24px; }
         .trees-stats { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
@@ -413,28 +247,16 @@
         /* ===== TESTIMONIAL ===== */
         .testimonial-section { background: var(--yellow-soft); padding: 80px 0; }
         .testimonial-tabs { display: flex; gap: 10px; margin-bottom: 40px; }
-        .test-tab {
-            padding: 7px 18px; border-radius: 50px; font-size: 0.85rem;
-            font-weight: 600; cursor: pointer; border: 1.5px solid transparent;
-            background: white; color: var(--muted);
-        }
+        .test-tab { padding: 7px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1.5px solid transparent; background: white; color: var(--muted); }
         .test-tab.active { background: var(--dark); color: white; }
         .testimonial-card { background: white; border-radius: 28px; padding: 40px; box-shadow: 0 8px 28px rgba(0,0,0,0.05); }
         .quote-icon { font-size: 2rem; color: var(--green); opacity: 0.35; margin-bottom: 16px; }
         .testimonial-text { font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 28px; font-style: italic; }
         .testimonial-author { display: flex; align-items: center; gap: 14px; }
-        .author-avatar {
-            width: 52px; height: 52px; border-radius: 50%;
-            background: var(--green); display: flex; align-items: center;
-            justify-content: center; color: white; font-weight: 700; font-size: 1.1rem;
-        }
+        .author-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; }
         .author-name { font-weight: 700; font-size: 0.95rem; }
         .author-role { font-size: 0.82rem; color: var(--muted); }
-        .dhl-logo {
-            margin-left: auto; background: #FFCC00;
-            color: #d4000c; font-weight: 900; font-size: 1.1rem;
-            padding: 6px 14px; border-radius: 6px;
-        }
+        .dhl-logo { margin-left: auto; background: #FFCC00; color: #d4000c; font-weight: 900; font-size: 1.1rem; padding: 6px 14px; border-radius: 6px; }
 
         /* ===== BLOG ===== */
         .blog-section { padding: 80px 0; }
@@ -454,16 +276,8 @@
 
         /* ===== CTA SECTION ===== */
         .cta-section { padding: 80px 0; }
-        .cta-inner {
-            background: linear-gradient(140deg, #0d4d25 0%, #1a7a45 60%, #1f8b4c 100%);
-            border-radius: 40px; padding: 72px 60px;
-            display: flex; align-items: center; gap: 48px;
-            position: relative; overflow: hidden;
-        }
-        .cta-inner::before {
-            content: ''; position: absolute; top: -80px; right: -80px;
-            width: 400px; height: 400px; background: rgba(255,255,255,0.04); border-radius: 50%;
-        }
+        .cta-inner { background: linear-gradient(140deg, #0d4d25 0%, #1a7a45 60%, #1f8b4c 100%); border-radius: 40px; padding: 72px 60px; display: flex; align-items: center; gap: 48px; position: relative; overflow: hidden; }
+        .cta-inner::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(255,255,255,0.04); border-radius: 50%; }
         .cta-left { flex: 1; }
         .cta-left h2 { font-family: 'Poppins', sans-serif; font-size: 2.4rem; color: white; line-height: 1.2; margin-bottom: 16px; font-weight: 600; letter-spacing: -0.02em; }
         .cta-left p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 28px; }
@@ -473,13 +287,7 @@
         .cta-right { flex: 0 0 300px; }
         .cta-form { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 24px; border: 1px solid rgba(255,255,255,0.15); }
         .cta-form h4 { color: white; font-weight: 700; margin-bottom: 16px; }
-        .form-input {
-            width: 100%; padding: 11px 16px; border-radius: 12px;
-            border: 1.5px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.08); color: white;
-            font-family: 'Inter', sans-serif; font-size: 0.88rem;
-            margin-bottom: 10px; outline: none;
-        }
+        .form-input { width: 100%; padding: 11px 16px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: white; font-family: 'Inter', sans-serif; font-size: 0.88rem; margin-bottom: 10px; outline: none; }
         .form-input::placeholder { color: rgba(255,255,255,0.45); }
         .form-input:focus { border-color: rgba(255,255,255,0.5); }
         .btn-full { width: 100%; justify-content: center; }
@@ -493,13 +301,7 @@
         .footer-col ul li a { text-decoration: none; color: var(--muted); font-size: 0.85rem; transition: color 0.18s; }
         .footer-col ul li a:hover { color: var(--green); }
         .social-row { display: flex; gap: 10px; }
-        .social-btn {
-            width: 36px; height: 36px; border-radius: 10px;
-            background: white; border: 1.5px solid var(--border);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--muted); font-size: 0.9rem; text-decoration: none;
-            transition: all 0.18s;
-        }
+        .social-btn { width: 36px; height: 36px; border-radius: 10px; background: white; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.9rem; text-decoration: none; transition: all 0.18s; }
         .social-btn:hover { border-color: var(--green); color: var(--green); }
         .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
         .footer-bottom p { font-size: 0.8rem; color: var(--muted); }
@@ -507,15 +309,15 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
-            .hero-grid, .better-grid, .teams-inner, .two-col-grid, .cta-inner { grid-template-columns: 1fr; flex-direction: column; }
+            .hero-grid, .better-grid, .two-col-grid, .cta-inner { grid-template-columns: 1fr; flex-direction: column; }
+            .teams-inner { flex-direction: column; }
             .use-cases-grid { grid-template-columns: 1fr 1fr; }
             .blog-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .section-title { font-size: 1.8rem; }
             .hero-title { font-size: 2.2rem; }
             .teams-right { flex: none; width: 100%; }
-            .logos-track-wrap::before,
-            .logos-track-wrap::after { width: 48px; }
+            .use-card-centered { grid-column: auto; }
         }
         @media (max-width: 600px) {
             .use-cases-grid { grid-template-columns: 1fr; }
@@ -560,9 +362,7 @@
                 <div class="hero-eyebrow">
                     <i class="fas fa-sparkles"></i> AI-powered skills &amp; knowledge
                 </div>
-                <h1 class="hero-title">
-                    Turn your assessments into success stories
-                </h1>
+                <h1 class="hero-title">Turn your assessments into success stories</h1>
                 <p class="hero-sub">Serving 2.5M+ business and educational users worldwide. Create online exams, quizzes, and skill tests in minutes.</p>
                 <div class="hero-cta">
                     <a href="#" class="btn btn-green">Sign up – it's free <i class="fas fa-arrow-right"></i></a>
@@ -570,7 +370,6 @@
                 </div>
                 <p class="hero-note"><i class="fas fa-lock"></i> No credit card required</p>
             </div>
-
             <div class="access-card">
                 <div class="access-card-preview">
                     <div class="preview-chip">Live test</div>
@@ -607,14 +406,13 @@
     </div>
 </section>
 
-<!-- LOGOS STRIP — ANIMATED MARQUEE -->
+<!-- LOGOS STRIP -->
 <div class="logos-strip">
     <div class="container">
         <p class="logos-label">Trusted by great brands worldwide</p>
     </div>
     <div class="logos-track-wrap">
         <div class="logos-track">
-            <!-- Set 1 -->
             <span class="logo-chip"><span class="logo-dot" style="background:#1a73e8;"></span>DB Schenker</span>
             <span class="logo-chip"><span class="logo-dot" style="background:#c8a21e;"></span>Hard Rock Cafe</span>
             <span class="logo-chip"><span class="logo-dot" style="background:#e63946;"></span>Liqui Moly</span>
@@ -623,7 +421,6 @@
             <span class="logo-chip"><span class="logo-dot" style="background:#d4000c;"></span>DHL</span>
             <span class="logo-chip"><span class="logo-dot" style="background:#7c3aed;"></span>Techland</span>
             <span class="logo-chip"><span class="logo-dot" style="background:#0f766e;"></span>RSM</span>
-            <!-- Set 2 — duplicate for seamless loop -->
             <span class="logo-chip"><span class="logo-dot" style="background:#1a73e8;"></span>DB Schenker</span>
             <span class="logo-chip"><span class="logo-dot" style="background:#c8a21e;"></span>Hard Rock Cafe</span>
             <span class="logo-chip"><span class="logo-dot" style="background:#e63946;"></span>Liqui Moly</span>
@@ -649,54 +446,129 @@
             <div class="tab" data-tab="education">Education</div>
         </div>
 
-        <!-- BUSINESS CARDS -->
+        <!-- BUSINESS CARDS — matching screenshots exactly -->
         <div class="use-cases-grid" id="tab-business">
+
+            <!-- 1. Recruitment -->
             <div class="use-card">
-                <div class="use-card-icon icon-orange"><i class="fas fa-magnifying-glass"></i></div>
+                <div class="use-card-icon-wrap">
+                    <svg width="60" height="52" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- magnifying glass with green circle -->
+                        <circle cx="22" cy="22" r="20" fill="#1DB954"/>
+                        <!-- dark circle cutout (lens hole effect) -->
+                        <circle cx="22" cy="22" r="11" fill="#0a5c28"/>
+                        <!-- handle -->
+                        <line x1="37" y1="37" x2="54" y2="51" stroke="#b5893a" stroke-width="6" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h4>Recruitment</h4>
-                <p>Identify top talents without endless CV screening. Build skill-based pre-hire assessments that work.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <p>Identify real talents without the hassle of time-consuming CV screening.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
+
+            <!-- 2. Employee Assessments -->
             <div class="use-card">
-                <div class="use-card-icon icon-purple"><i class="fas fa-users"></i></div>
+                <div class="use-card-icon-wrap">
+                    <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- left person (purple circle head) -->
+                        <circle cx="22" cy="13" r="10" fill="#C9B8F0"/>
+                        <!-- left person body (green rectangle) -->
+                        <rect x="10" y="26" width="24" height="18" rx="6" fill="#1DB954"/>
+                        <!-- right person (green circle head, overlapping) -->
+                        <circle cx="42" cy="13" r="10" fill="#1DB954"/>
+                        <!-- right person body (dark) -->
+                        <rect x="30" y="26" width="24" height="18" rx="6" fill="#1b3328"/>
+                    </svg>
+                </div>
                 <h4>Employee Assessments</h4>
-                <p>Encourage continuous growth and team spirit with regular, engaging knowledge checks.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <p>Online workforce assessments encourage your employees to grow and cultivate a positive team spirit.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
+
+            <!-- 3. Training -->
             <div class="use-card">
-                <div class="use-card-icon icon-green"><i class="fas fa-chalkboard-user"></i></div>
+                <div class="use-card-icon-wrap">
+                    <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- dark half-circle left -->
+                        <circle cx="24" cy="24" r="20" fill="#1b3328"/>
+                        <!-- yellow small circle overlapping -->
+                        <circle cx="26" cy="24" r="10" fill="#F5C842" opacity="0.9"/>
+                        <!-- big green circle right -->
+                        <circle cx="46" cy="24" r="20" fill="#1DB954"/>
+                    </svg>
+                </div>
                 <h4>Training</h4>
-                <p>Create a professional, distraction-free training environment for all your learning programs.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <p>Evaluate skills and knowledge in a professional and distraction-free environment.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
+
+            <!-- 4. Sales Training -->
             <div class="use-card">
-                <div class="use-card-icon icon-orange"><i class="fas fa-chart-line"></i></div>
+                <div class="use-card-icon-wrap">
+                    <svg width="64" height="52" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- bar chart: 3 bars of increasing height -->
+                        <rect x="2" y="36" width="16" height="16" rx="3" fill="#F5C842"/>
+                        <rect x="24" y="22" width="16" height="30" rx="3" fill="#1DB954"/>
+                        <rect x="46" y="8" width="16" height="44" rx="3" fill="#1b3328"/>
+                    </svg>
+                </div>
                 <h4>Sales Training</h4>
-                <p>Equip your sales force with essential knowledge. Boost results with targeted skill tests.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <p>Boost sales by giving your team the skills they need to interact with customers.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
+
+            <!-- 5. Customer Service -->
             <div class="use-card">
-                <div class="use-card-icon icon-purple"><i class="fas fa-headset"></i></div>
+                <div class="use-card-icon-wrap">
+                    <svg width="64" height="54" viewBox="0 0 64 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- speech bubble shape -->
+                        <path d="M8 4 C8 4, 56 4, 56 4 C60 4, 62 6, 62 10 L62 34 C62 38, 60 40, 56 40 L38 40 L28 52 L24 40 L8 40 C4 40, 2 38, 2 34 L2 10 C2 6, 4 4, 8 4 Z" fill="#F5C842"/>
+                        <!-- dark eye/pupil circle -->
+                        <circle cx="40" cy="22" r="12" fill="#C9B8F0" opacity="0.85"/>
+                        <circle cx="40" cy="22" r="6" fill="#1b3328"/>
+                    </svg>
+                </div>
                 <h4>Customer Service</h4>
-                <p>Meet and exceed service standards with customized customer-facing assessments.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <p>Use customized tests to ensure that employees are meeting customer service standards.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
+
+            <!-- 6. Safety Procedures -->
             <div class="use-card">
-                <div class="use-card-icon icon-green"><i class="fas fa-shield-halved"></i></div>
+                <div class="use-card-icon-wrap">
+                    <svg width="52" height="56" viewBox="0 0 52 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- shield shape -->
+                        <path d="M26 2 L48 12 L48 30 C48 42, 38 52, 26 55 C14 52, 4 42, 4 30 L4 12 Z" fill="#1DB954"/>
+                        <!-- white checkmark -->
+                        <polyline points="14,28 22,36 38,18" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
                 <h4>Safety Procedures</h4>
-                <p>Build better workplace safety culture and ensure compliance with smart assessments.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <p>Build a better work environment while boosting morale and performance.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
-            <div class="use-card" style="grid-column: 1 / -1; max-width: 380px; margin: 0 auto;">
-                <div class="use-card-icon icon-orange"><i class="fas fa-certificate"></i></div>
+
+            <!-- 7. Certification — centered -->
+            <div class="use-card use-card-centered">
+                <div class="use-card-icon-wrap">
+                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- outer light green circle -->
+                        <circle cx="26" cy="26" r="26" fill="#b8f0ce"/>
+                        <!-- inner green circle -->
+                        <circle cx="26" cy="26" r="18" fill="#1DB954"/>
+                        <!-- white checkmark -->
+                        <polyline points="15,26 22,33 37,18" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
                 <h4>Certification</h4>
-                <p>Streamline your certification and accreditation processes end-to-end, from test to badge.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <p>Streamline your certification processes with efficient and easy-to-use online assessment tools.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
+
         </div>
 
         <!-- EDUCATION CARDS -->
-        <div class="use-cases-grid" id="tab-education" style="display:none;">
+        <div class="use-cases-grid" id="tab-education">
 
             <div class="use-card">
                 <div class="edu-icon">
@@ -707,7 +579,7 @@
                 </div>
                 <h4>Quizzes</h4>
                 <p>Engage your remote students or connected classrooms in a way that's efficient and fun.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
 
             <div class="use-card">
@@ -719,7 +591,7 @@
                 </div>
                 <h4>Exams</h4>
                 <p>Test skills and knowledge in a professional and no-distraction environment.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
 
             <div class="use-card">
@@ -731,33 +603,31 @@
                 </div>
                 <h4>Homework</h4>
                 <p>Give friendly and interactive after school assignments.</p>
-                <a href="#" class="learn-link">Learn more →</a>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
 
-            <div class="edu-bottom-row">
-                <div class="use-card">
-                    <div class="edu-icon">
-                        <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="0,18 22,0 22,36" fill="#1b3328"/>
-                            <polygon points="52,18 30,0 30,36" fill="#1DB954"/>
-                        </svg>
-                    </div>
-                    <h4>Competition</h4>
-                    <p>Empower learners, challenge them and encourage discussions to experience amazing results.</p>
-                    <a href="#" class="learn-link">Learn more →</a>
+            <div class="use-card">
+                <div class="edu-icon">
+                    <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="0,18 22,0 22,36" fill="#1b3328"/>
+                        <polygon points="52,18 30,0 30,36" fill="#1DB954"/>
+                    </svg>
                 </div>
+                <h4>Competition</h4>
+                <p>Empower learners, challenge them and encourage discussions to experience amazing results.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
+            </div>
 
-                <div class="use-card">
-                    <div class="edu-icon">
-                        <svg width="52" height="40" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M26,0 A20,20 0 0,0 26,40 Z" fill="#F5C842"/>
-                            <path d="M26,4 A16,16 0 0,1 26,36 Z" fill="#C9B8F0"/>
-                        </svg>
-                    </div>
-                    <h4>Formative Assessment</h4>
-                    <p>Positive motivation, encouraging feedback, and equal opportunities with a new educational approach.</p>
-                    <a href="#" class="learn-link">Learn more →</a>
+            <div class="use-card">
+                <div class="edu-icon">
+                    <svg width="52" height="40" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26,0 A20,20 0 0,0 26,40 Z" fill="#F5C842"/>
+                        <path d="M26,4 A16,16 0 0,1 26,36 Z" fill="#C9B8F0"/>
+                    </svg>
                 </div>
+                <h4>Formative Assessment</h4>
+                <p>Positive motivation, encouraging feedback, and equal opportunities with a new educational approach.</p>
+                <a href="#" class="learn-link">Learn more <span class="arrow">→</span></a>
             </div>
 
         </div>
@@ -866,12 +736,12 @@
                 <h2 class="section-title">What our users say</h2>
             </div>
             <div class="testimonial-tabs">
-                <div class="test-tab active">DHL</div>
-                <div class="test-tab">RSM Poland</div>
-                <div class="test-tab">Panasonic</div>
+                <div class="test-tab active" data-testimonial="dhl">DHL</div>
+                <div class="test-tab" data-testimonial="rsm">RSM Poland</div>
+                <div class="test-tab" data-testimonial="panasonic">Panasonic</div>
             </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card" id="testimonial-content">
             <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
             <p class="testimonial-text">"Our company has been assessing the knowledge of our employees and delivery persons to guarantee professional customer service. Testportal proved to be a great platform with a clear test-creation interface. During assessments we monitor progress in real time, and after each test we receive detailed statistics."</p>
             <div class="testimonial-author">
@@ -993,9 +863,12 @@
                 <h5>For Business</h5>
                 <ul>
                     <li><a href="#">HR &amp; Recruitment</a></li>
-                    <li><a href="#">Training Departments</a></li>
+                    <li><a href="#">Employee Assessments</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Sales Training</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Safety Procedures</a></li>
                     <li><a href="#">Certification</a></li>
-                    <li><a href="#">Sales &amp; CS</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1026,7 +899,7 @@
 </footer>
 
 <script>
-    // Tab switching — Business / Education
+    // ===== Business / Education Tab Switching =====
     const tabs = document.querySelectorAll('.tab[data-tab]');
     const businessGrid = document.getElementById('tab-business');
     const educationGrid = document.getElementById('tab-education');
@@ -1039,31 +912,100 @@
             if (target === 'business') {
                 businessGrid.style.display = 'grid';
                 educationGrid.style.display = 'none';
+                void businessGrid.offsetHeight;
                 businessGrid.style.animation = 'none';
-                businessGrid.offsetHeight;
-                businessGrid.style.animation = '';
+                requestAnimationFrame(() => {
+                    businessGrid.style.animation = '';
+                });
             } else {
                 businessGrid.style.display = 'none';
                 educationGrid.style.display = 'grid';
+                void educationGrid.offsetHeight;
                 educationGrid.style.animation = 'none';
-                educationGrid.offsetHeight;
-                educationGrid.style.animation = '';
+                requestAnimationFrame(() => {
+                    educationGrid.style.animation = '';
+                });
             }
         });
     });
 
-    // Testimonial tabs
+    // ===== Testimonial Tabs =====
+    const testimonials = {
+        dhl: {
+            text: '"Our company has been assessing the knowledge of our employees and delivery persons to guarantee professional customer service. Testportal proved to be a great platform with a clear test-creation interface. During assessments we monitor progress in real time, and after each test we receive detailed statistics."',
+            initials: 'HC',
+            name: 'Hirek Chmielowiec',
+            role: 'OPS Trainer, DHL Express',
+            badge: '<div class="dhl-logo">DHL</div>'
+        },
+        rsm: {
+            text: '"APARAITECH SOFTWARE helped us significantly reduce recruitment time. We can now pre-screen hundreds of candidates efficiently using skill-based tests, allowing our team to focus only on the best-fit applicants. The platform is intuitive and the analytics are excellent."',
+            initials: 'MK',
+            name: 'Marta Kowalski',
+            role: 'HR Director, RSM Poland',
+            badge: '<div style="margin-left:auto;background:#1f3a6e;color:white;font-weight:800;font-size:0.9rem;padding:6px 14px;border-radius:6px;">RSM</div>'
+        },
+        panasonic: {
+            text: '"We use APARAITECH SOFTWARE across multiple departments to run product knowledge assessments for our sales teams. The ability to create professional-grade tests quickly, combined with real-time monitoring, has made a real difference in how we train and certify our staff."',
+            initials: 'TN',
+            name: 'Tomoko Nakamura',
+            role: 'Training Manager, Panasonic Europe',
+            badge: '<div style="margin-left:auto;background:#003087;color:white;font-weight:800;font-size:0.85rem;padding:6px 14px;border-radius:6px;">Panasonic</div>'
+        }
+    };
+
     document.querySelectorAll('.test-tab').forEach(tab => {
         tab.addEventListener('click', () => {
             document.querySelectorAll('.test-tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
+
+            const key = tab.dataset.testimonial;
+            const data = testimonials[key];
+            const card = document.getElementById('testimonial-content');
+
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(8px)';
+            card.style.transition = 'opacity 0.2s, transform 0.2s';
+
+            setTimeout(() => {
+                card.querySelector('.testimonial-text').textContent = data.text;
+                card.querySelector('.author-avatar').textContent = data.initials;
+                card.querySelector('.author-name').textContent = data.name;
+                card.querySelector('.author-role').textContent = data.role;
+                // remove old badge
+                const oldBadge = card.querySelector('.testimonial-author > div:last-child');
+                if (oldBadge && !oldBadge.classList.contains('author-avatar') && !oldBadge.querySelector('.author-name')) {
+                    oldBadge.outerHTML = data.badge;
+                }
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 200);
         });
     });
 
-    // Scroll-based nav shadow
+    // ===== Scroll-based nav shadow =====
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
         nav.style.boxShadow = window.scrollY > 20 ? '0 2px 16px rgba(0,0,0,0.06)' : 'none';
+    });
+
+    // ===== Access code input =====
+    document.querySelector('.access-input').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const val = e.target.value.trim();
+            if (val) alert('Starting test with code: ' + val);
+        }
+    });
+
+    // ===== CTA form =====
+    document.querySelector('.btn-full').addEventListener('click', () => {
+        const name = document.querySelectorAll('.form-input')[0].value.trim();
+        const email = document.querySelectorAll('.form-input')[1].value.trim();
+        if (!name || !email) {
+            alert('Please fill in your name and email.');
+        } else {
+            alert('Account created for ' + name + '! Welcome to APARAITECH SOFTWARE.');
+        }
     });
 </script>
 </body>
