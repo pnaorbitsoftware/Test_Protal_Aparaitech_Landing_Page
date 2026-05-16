@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APARAITECH SOFTWARE | AI-Powered Assessment Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -155,21 +155,92 @@
         .access-input {
             flex: 1; padding: 11px 16px;
             border-radius: 50px; border: 1.5px solid var(--border);
-            font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+            font-family: 'Inter', sans-serif; font-size: 0.9rem;
             outline: none; transition: border-color 0.2s;
         }
         .access-input:focus { border-color: var(--green); }
         .btn-sm { padding: 11px 18px; font-size: 0.85rem; }
 
-        /* ===== LOGOS STRIP ===== */
-        .logos-strip { padding: 48px 0 32px; border-bottom: 1px solid var(--border); }
-        .logos-label { text-align: center; font-size: 0.82rem; color: var(--muted); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
-        .logos-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 24px; }
+        /* ===== LOGOS STRIP — ANIMATED MARQUEE ===== */
+        .logos-strip {
+            padding: 48px 0 32px;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .logos-label {
+            text-align: center;
+            font-size: 0.82rem; color: var(--muted);
+            margin-bottom: 24px;
+            text-transform: uppercase; letter-spacing: 1px; font-weight: 500;
+        }
+
+        /* Fade edge masks */
+        .logos-track-wrap {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .logos-track-wrap::before,
+        .logos-track-wrap::after {
+            content: '';
+            position: absolute; top: 0; bottom: 0;
+            width: 100px; z-index: 2; pointer-events: none;
+        }
+        .logos-track-wrap::before {
+            left: 0;
+            background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+        }
+        .logos-track-wrap::after {
+            right: 0;
+            background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+        }
+
+        /* Scrolling track */
+        .logos-track {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: max-content;
+            animation: scrollLogos 26s linear infinite;
+        }
+        .logos-track:hover { animation-play-state: paused; }
+
+        @keyframes scrollLogos {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Individual chip */
         .logo-chip {
-            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px;
-            color: #6a7f70; padding: 7px 18px;
-            border: 1.5px solid #dde8e0; border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 22px;
+            border-radius: 40px;
+            border: 1.5px solid #dde8e0;
             background: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: var(--muted);
+            white-space: nowrap;
+            cursor: default;
+            transition: border-color 0.22s, color 0.22s, transform 0.22s, box-shadow 0.22s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .logo-chip:hover {
+            color: var(--text);
+            border-color: var(--green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(31,139,76,0.12);
+        }
+
+        /* Colored dot per brand */
+        .logo-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            opacity: 0.85;
         }
 
         /* ===== SECTION STYLES ===== */
@@ -201,10 +272,8 @@
         }
         .tab.active { background: var(--dark); color: white; border-color: var(--dark); }
 
-        /* Education grid — 3 cols top row, 2 centered bottom row */
-        #tab-education {
-            grid-template-columns: repeat(3, 1fr);
-        }
+        /* Education grid */
+        #tab-education { grid-template-columns: repeat(3, 1fr); }
         #tab-education .edu-bottom-row {
             grid-column: 1 / -1;
             display: grid;
@@ -212,19 +281,9 @@
             gap: 20px;
             justify-content: center;
         }
+        .edu-icon { margin-bottom: 18px; display: flex; align-items: center; min-height: 44px; }
 
-        /* Education icon wrapper */
-        .edu-icon {
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            min-height: 44px;
-        }
-
-        /* Tab panel fade animation */
-        .use-cases-grid {
-            animation: fadeIn 0.3s ease;
-        }
+        .use-cases-grid { animation: fadeIn 0.3s ease; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -252,10 +311,7 @@
         .learn-link:hover { text-decoration: underline; }
 
         /* ===== BETTER WAY SECTION (dark) ===== */
-        .better-section {
-            background: var(--teal-section);
-            padding: 80px 0;
-        }
+        .better-section { background: var(--teal-section); padding: 80px 0; }
         .better-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
         .better-left .section-label { background: rgba(255,255,255,0.1); color: #7fd4a2; }
         .better-left .section-title { color: white; }
@@ -276,10 +332,7 @@
         }
         .problem-card h4 { color: white; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .problem-card p { color: #98bfaa; font-size: 0.88rem; line-height: 1.6; }
-        .solution-card {
-            background: var(--green);
-            border-radius: 20px; padding: 24px;
-        }
+        .solution-card { background: var(--green); border-radius: 20px; padding: 24px; }
         .solution-card h4 { color: white; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .solution-card p { color: rgba(255,255,255,0.85); font-size: 0.88rem; line-height: 1.6; margin-bottom: 16px; }
         .btn-white { background: white; color: var(--green); font-weight: 700; }
@@ -289,8 +342,7 @@
         .teams-section { background: #0a1a0f; padding: 70px 0; }
         .teams-inner {
             display: flex; align-items: center; gap: 48px;
-            background: #111f17;
-            border-radius: 32px; padding: 48px;
+            background: #111f17; border-radius: 32px; padding: 48px;
             border: 1px solid #1e3828;
         }
         .teams-left { flex: 1; }
@@ -318,7 +370,7 @@
             content: ''; position: absolute; inset: 0;
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E") repeat;
         }
-        .teams-people { display: flex; justify-content: center; gap: -8px; }
+        .teams-people { display: flex; justify-content: center; }
         .person-avatar {
             width: 52px; height: 52px; border-radius: 50%;
             border: 3px solid #1c4a2a;
@@ -333,10 +385,7 @@
         /* ===== SECURITY + TREES ===== */
         .two-col-section { padding: 80px 0; }
         .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .security-card {
-            background: #f4f0ff;
-            border-radius: 24px; padding: 36px;
-        }
+        .security-card { background: #f4f0ff; border-radius: 24px; padding: 36px; }
         .security-card .card-icon-wrap {
             width: 48px; height: 48px; border-radius: 14px;
             background: #7c3aed; display: flex; align-items: center; justify-content: center;
@@ -350,8 +399,7 @@
             position: relative; overflow: hidden;
         }
         .trees-card::after {
-            content: '🌳';
-            position: absolute; bottom: -10px; right: -10px;
+            content: '🌳'; position: absolute; bottom: -10px; right: -10px;
             font-size: 9rem; opacity: 0.12;
         }
         .trees-card h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 600; }
@@ -394,10 +442,7 @@
         .blog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .blog-card { border-radius: 20px; overflow: hidden; border: 1.5px solid var(--border); transition: 0.2s; background: white; }
         .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.06); }
-        .blog-thumb {
-            height: 148px; display: flex; align-items: center; justify-content: center;
-            font-size: 2.6rem;
-        }
+        .blog-thumb { height: 148px; display: flex; align-items: center; justify-content: center; font-size: 2.6rem; }
         .thumb-green { background: linear-gradient(135deg, #d0ede0, #a8d8bc); }
         .thumb-dark { background: linear-gradient(135deg, #1a2e22, #0f1f15); color: #4bde80; }
         .thumb-yellow { background: linear-gradient(135deg, #fdf0c0, #f5d862); }
@@ -416,11 +461,8 @@
             position: relative; overflow: hidden;
         }
         .cta-inner::before {
-            content: ''; position: absolute;
-            top: -80px; right: -80px;
-            width: 400px; height: 400px;
-            background: rgba(255,255,255,0.04);
-            border-radius: 50%;
+            content: ''; position: absolute; top: -80px; right: -80px;
+            width: 400px; height: 400px; background: rgba(255,255,255,0.04); border-radius: 50%;
         }
         .cta-left { flex: 1; }
         .cta-left h2 { font-family: 'Poppins', sans-serif; font-size: 2.4rem; color: white; line-height: 1.2; margin-bottom: 16px; font-weight: 600; letter-spacing: -0.02em; }
@@ -435,7 +477,7 @@
             width: 100%; padding: 11px 16px; border-radius: 12px;
             border: 1.5px solid rgba(255,255,255,0.2);
             background: rgba(255,255,255,0.08); color: white;
-            font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+            font-family: 'Inter', sans-serif; font-size: 0.88rem;
             margin-bottom: 10px; outline: none;
         }
         .form-input::placeholder { color: rgba(255,255,255,0.45); }
@@ -472,6 +514,8 @@
             .section-title { font-size: 1.8rem; }
             .hero-title { font-size: 2.2rem; }
             .teams-right { flex: none; width: 100%; }
+            .logos-track-wrap::before,
+            .logos-track-wrap::after { width: 48px; }
         }
         @media (max-width: 600px) {
             .use-cases-grid { grid-template-columns: 1fr; }
@@ -563,19 +607,31 @@
     </div>
 </section>
 
-<!-- LOGOS STRIP -->
+<!-- LOGOS STRIP — ANIMATED MARQUEE -->
 <div class="logos-strip">
     <div class="container">
         <p class="logos-label">Trusted by great brands worldwide</p>
-        <div class="logos-row">
-            <span class="logo-chip">DB Schenker</span>
-            <span class="logo-chip">Hard Rock Cafe</span>
-            <span class="logo-chip">Liqui Moly</span>
-            <span class="logo-chip">Panasonic</span>
-            <span class="logo-chip">Electrolux</span>
-            <span class="logo-chip">DHL</span>
-            <span class="logo-chip">Techland</span>
-            <span class="logo-chip">RSM</span>
+    </div>
+    <div class="logos-track-wrap">
+        <div class="logos-track">
+            <!-- Set 1 -->
+            <span class="logo-chip"><span class="logo-dot" style="background:#1a73e8;"></span>DB Schenker</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#c8a21e;"></span>Hard Rock Cafe</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#e63946;"></span>Liqui Moly</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#1d4ed8;"></span>Panasonic</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#16a34a;"></span>Electrolux</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#d4000c;"></span>DHL</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#7c3aed;"></span>Techland</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#0f766e;"></span>RSM</span>
+            <!-- Set 2 — duplicate for seamless loop -->
+            <span class="logo-chip"><span class="logo-dot" style="background:#1a73e8;"></span>DB Schenker</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#c8a21e;"></span>Hard Rock Cafe</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#e63946;"></span>Liqui Moly</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#1d4ed8;"></span>Panasonic</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#16a34a;"></span>Electrolux</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#d4000c;"></span>DHL</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#7c3aed;"></span>Techland</span>
+            <span class="logo-chip"><span class="logo-dot" style="background:#0f766e;"></span>RSM</span>
         </div>
     </div>
 </div>
@@ -642,7 +698,6 @@
         <!-- EDUCATION CARDS -->
         <div class="use-cases-grid" id="tab-education" style="display:none;">
 
-            <!-- Quizzes -->
             <div class="use-card">
                 <div class="edu-icon">
                     <svg width="56" height="40" viewBox="0 0 56 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -655,7 +710,6 @@
                 <a href="#" class="learn-link">Learn more →</a>
             </div>
 
-            <!-- Exams -->
             <div class="use-card">
                 <div class="edu-icon">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -668,13 +722,10 @@
                 <a href="#" class="learn-link">Learn more →</a>
             </div>
 
-            <!-- Homework -->
             <div class="use-card">
                 <div class="edu-icon">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- triangle mountain shape -->
                         <polygon points="22,4 42,38 2,38" fill="#1b3328"/>
-                        <!-- green hill/base -->
                         <ellipse cx="22" cy="38" rx="16" ry="7" fill="#1DB954"/>
                     </svg>
                 </div>
@@ -683,40 +734,31 @@
                 <a href="#" class="learn-link">Learn more →</a>
             </div>
 
-            <!-- Competition + Formative Assessment — centered bottom row -->
             <div class="edu-bottom-row">
-
-            <!-- Competition -->
-            <div class="use-card">
-                <div class="edu-icon">
-                    <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- left arrow/bowtie shape -->
-                        <polygon points="0,18 22,0 22,36" fill="#1b3328"/>
-                        <!-- right arrow/bowtie shape -->
-                        <polygon points="52,18 30,0 30,36" fill="#1DB954"/>
-                    </svg>
+                <div class="use-card">
+                    <div class="edu-icon">
+                        <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="0,18 22,0 22,36" fill="#1b3328"/>
+                            <polygon points="52,18 30,0 30,36" fill="#1DB954"/>
+                        </svg>
+                    </div>
+                    <h4>Competition</h4>
+                    <p>Empower learners, challenge them and encourage discussions to experience amazing results.</p>
+                    <a href="#" class="learn-link">Learn more →</a>
                 </div>
-                <h4>Competition</h4>
-                <p>Empower learners, challenge them and encourage discussions to experience amazing results.</p>
-                <a href="#" class="learn-link">Learn more →</a>
-            </div>
 
-            <!-- Formative Assessment -->
-            <div class="use-card">
-                <div class="edu-icon">
-                    <svg width="52" height="40" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- yellow left half-circle -->
-                        <path d="M26,0 A20,20 0 0,0 26,40 Z" fill="#F5C842"/>
-                        <!-- purple right half-circle -->
-                        <path d="M26,4 A16,16 0 0,1 26,36 Z" fill="#C9B8F0"/>
-                    </svg>
+                <div class="use-card">
+                    <div class="edu-icon">
+                        <svg width="52" height="40" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26,0 A20,20 0 0,0 26,40 Z" fill="#F5C842"/>
+                            <path d="M26,4 A16,16 0 0,1 26,36 Z" fill="#C9B8F0"/>
+                        </svg>
+                    </div>
+                    <h4>Formative Assessment</h4>
+                    <p>Positive motivation, encouraging feedback, and equal opportunities with a new educational approach.</p>
+                    <a href="#" class="learn-link">Learn more →</a>
                 </div>
-                <h4>Formative Assessment</h4>
-                <p>Positive motivation, encouraging feedback, and equal opportunities with a new educational approach.</p>
-                <a href="#" class="learn-link">Learn more →</a>
             </div>
-
-            </div><!-- end edu-bottom-row -->
 
         </div>
     </div>
@@ -950,10 +992,10 @@
             <div class="footer-col">
                 <h5>For Business</h5>
                 <ul>
-                    <li><a href="#">HR & Recruitment</a></li>
+                    <li><a href="#">HR &amp; Recruitment</a></li>
                     <li><a href="#">Training Departments</a></li>
                     <li><a href="#">Certification</a></li>
-                    <li><a href="#">Sales & CS</a></li>
+                    <li><a href="#">Sales &amp; CS</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -970,7 +1012,7 @@
                 <h5>Legal</h5>
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
                     <li><a href="#">Cookie Settings</a></li>
                     <li><a href="#">GDPR</a></li>
                 </ul>
@@ -984,7 +1026,7 @@
 </footer>
 
 <script>
-    // Tab switching (Use Cases) — Business / Education
+    // Tab switching — Business / Education
     const tabs = document.querySelectorAll('.tab[data-tab]');
     const businessGrid = document.getElementById('tab-business');
     const educationGrid = document.getElementById('tab-education');
@@ -993,12 +1035,10 @@
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-
             const target = tab.dataset.tab;
             if (target === 'business') {
                 businessGrid.style.display = 'grid';
                 educationGrid.style.display = 'none';
-                // re-trigger animation
                 businessGrid.style.animation = 'none';
                 businessGrid.offsetHeight;
                 businessGrid.style.animation = '';
@@ -1020,7 +1060,7 @@
         });
     });
 
-    // Subtle scroll-based nav shadow
+    // Scroll-based nav shadow
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
         nav.style.boxShadow = window.scrollY > 20 ? '0 2px 16px rgba(0,0,0,0.06)' : 'none';
