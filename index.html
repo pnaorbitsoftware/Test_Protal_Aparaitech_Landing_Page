@@ -178,6 +178,188 @@ header{
 
 }
 
+/*microsoft team section*/
+/* MAIN SECTION */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+.teams-section{
+     width:100%;
+    background:#f5e8a9;
+
+    padding:90px 80px;
+
+    /* TOP & BOTTOM SPACE */
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+/* FLEX */
+
+.teams-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+}
+
+/* LEFT */
+
+.teams-content{
+    flex:1;
+}
+
+.teams-content h1{
+    font-size:4rem;
+    line-height:1.1;
+
+    color:#003f4c;
+
+    margin-bottom:35px;
+
+    font-weight:800;
+}
+
+.teams-content p{
+    font-size:1.3rem;
+
+    color:#4d6269;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin-bottom:45px;
+}
+
+/* BUTTONS */
+
+.btn-group{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    background:#004b57;
+    color:white;
+
+    padding:20px 38px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    font-size:1.2rem;
+    font-weight:700;
+
+    transition:0.3s;
+}
+
+.btn-primary:hover{
+    background:#00323b;
+}
+
+.btn-outline{
+    border:2px solid #004b57;
+
+    color:#004b57;
+
+    padding:18px 38px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    font-size:1.2rem;
+    font-weight:700;
+
+    transition:0.3s;
+}
+
+.btn-outline:hover{
+    background:#004b57;
+    color:white;
+}
+
+/* IMAGE */
+
+.teams-image{
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+}
+
+.teams-image img{
+    width:100%;
+    max-width:850px;
+
+    border-top-left-radius:220px;
+    border-bottom-left-radius:220px;
+
+    object-fit:cover;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+    .teams-content h1{
+        font-size:3rem;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .teams-container{
+        flex-direction:column;
+    }
+
+    .teams-content{
+        text-align:center;
+    }
+
+    .teams-content p{
+        margin:auto auto 40px;
+    }
+
+    .btn-group{
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .teams-section{
+        padding:60px 25px;
+    }
+
+    .teams-content h1{
+        font-size:2.3rem;
+    }
+
+    .teams-content p{
+        font-size:1rem;
+    }
+
+    .btn-primary,
+    .btn-outline{
+        width:100%;
+        text-align:center;
+    }
+
+}
 /* ===================================================
    TYPOGRAPHY
 =================================================== */
@@ -295,9 +477,63 @@ header{
     background:rgba(255,255,255,0.08);
 }
 
-/* ===================================================
-   HERO
-=================================================== */
+/* LOGO SECTION */
+
+.logo-slider{
+    overflow:hidden;
+    width:100%;
+    padding:40px 0;
+    background:#ffffff;
+    position:relative;
+}
+
+.logo-track{
+    display:flex;
+    width:calc(250px * 16);
+    animation:scroll 25s linear infinite;
+}
+
+.logo-item{
+    width:220px;
+    height:90px;
+    margin:0 15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f8fafc;
+    border-radius:20px;
+
+    font-size:1.1rem;
+    font-weight:700;
+    color:#083b44;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+
+    transition:0.3s;
+}
+
+.logo-item:hover{
+    transform:translateY(-5px);
+    background:#083b44;
+    color:white;
+}
+
+/* ANIMATION */
+
+@keyframes scroll{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(calc(-250px * 8));
+    }
+}
+
+
 
 .hero{
     display:grid;
@@ -326,6 +562,11 @@ main{
     font-size:1.25rem;
     line-height:1.8;
     color:#dbeafe;
+}
+.scroll{
+    margin-left: 500px;
+    margin-top: 47px;
+    font-size: 18px;
 }
 
 /* ===================================================
@@ -395,6 +636,57 @@ main{
     color:#64748b;
 }
 
+ .brand-section{
+    margin-top:120px;
+    margin-bottom:120px;
+    text-align:center;
+}
+
+/* CONTAINER */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* TITLE */
+
+.brand-title{
+    font-size:2.5rem;
+    font-weight:800;
+    color:#083b44;
+    margin-bottom:25px;
+    line-height:1.2;
+}
+
+/* TEXT */
+
+.brand-text{
+    max-width:850px;
+    margin:auto;
+
+    font-size:1.2rem;
+    line-height:1.9;
+
+    color:#64748b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .brand-title{
+        font-size:2rem;
+    }
+
+    .brand-text{
+        font-size:1rem;
+    }
+
+}
+ 
+ 
 /* ===================================================
    SECTION
 =================================================== */
@@ -676,6 +968,418 @@ footer{
     }
 }
 
+ 
+
+    .security-section{
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:70px 60px;
+      background:#e9eaec;
+      border-radius: 10px;
+      margin-bottom: 250px;
+    }
+
+    .security-container{
+      width:100%;
+      max-width:1500px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:80px;
+    }
+
+    .security-image{
+      flex:1;
+      overflow:hidden;
+      border-top-right-radius:300px;
+      border-bottom-right-radius:300px;
+    }
+
+    .security-image img{
+      width:100%;
+      height:400px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .security-content{
+      flex:1;
+      max-width:550px;
+    }
+
+    .security-content h1{
+      font-size:50px;
+      line-height:1.15;
+      color:#014c56;
+      font-weight:700;
+      margin-bottom:35px;
+    }
+
+    .security-content p{
+      font-size:22px;
+      line-height:1.8;
+      color:#52656d;
+      margin-bottom:40px;
+    }
+
+    .learn-btn{
+      display:inline-block;
+      padding:18px 42px;
+      border:2px solid #014c56;
+      border-radius:14px;
+      text-decoration:none;
+      color:#014c56;
+      font-size:22px;
+      font-weight:600;
+      transition:0.3s ease;
+    }
+
+    .learn-btn:hover{
+      background:#014c56;
+      color:#fff;
+    }
+
+    /* Responsive */
+
+    @media(max-width:1100px){
+
+      .security-container{
+        flex-direction:column;
+      }
+
+      .security-image{
+        width:100%;
+        border-radius:40px;
+      }
+
+      .security-image img{
+        height:450px;
+      }
+
+      .security-content{
+        text-align:center;
+      }
+
+      .security-content h1{
+        font-size:42px;
+      }
+
+      .security-content p{
+        font-size:20px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .security-section{
+        padding:40px 20px;
+      }
+
+      .security-content h1{
+        font-size:34px;
+      }
+
+      .security-content p{
+        font-size:18px;
+      }
+
+      .learn-btn{
+        font-size:22px;
+        padding:15px 30px;
+      }
+
+      .security-image img{
+        height:320px;
+      }
+    }
+
+    .margin{
+        margin-bottom: 30px;
+    }
+    /* dummy page content to make footer realistic */
+        .dummy-content {
+            flex: 1;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(145deg, #ffffff 0%, #f5f7fa 100%);
+        }
+
+        .dummy-content h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #083b44;
+            margin-bottom: 16px;
+        }
+
+        .dummy-content p {
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* =============================================
+           FOOTER STYLES (only footer, fully modern)
+        ============================================= */
+        .site-footer {
+            background: #ffffff;
+            border-top: 1px solid #eef2f0;
+            padding: 70px 0 32px;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* footer grid layout */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 48px 32px;
+            margin-bottom: 48px;
+        }
+
+        /* column headings */
+        .footer-col h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #083b44;
+            margin-bottom: 24px;
+            letter-spacing: -0.2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* optional subtle underline effect */
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 32px;
+            height: 3px;
+            background: #b8f27f;
+            border-radius: 4px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .footer-col li {
+            margin-bottom: 14px;
+        }
+
+        .footer-col a {
+            text-decoration: none;
+            color: #4a5b6e;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .footer-col a:hover {
+            color: #0f8b6e;
+            transform: translateX(3px);
+        }
+
+        /* social icons + newsletter area */
+        .footer-newsletter {
+            margin-top: 20px;
+        }
+
+        .newsletter-text {
+            color: #4a5b6e;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 16px 0 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 150px;
+            padding: 12px 16px;
+            border-radius: 40px;
+            border: 1px solid #dce5e2;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            background: #ffffff;
+            transition: 0.2s;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #0f8b6e;
+            box-shadow: 0 0 0 3px rgba(15, 139, 110, 0.1);
+        }
+
+        .newsletter-form button {
+            background: #083b44;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .newsletter-form button:hover {
+            background: #0e5b68;
+            transform: translateY(-2px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            margin: 24px 0 12px;
+        }
+
+        .social-icons a {
+            background: #f1f5f9;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c5f6b;
+            font-size: 1.2rem;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #083b44;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* app badges / store links (optional modern touch) */
+        .store-badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .store-badge {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 6px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #e2edeb;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1c4e5a;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .store-badge i {
+            font-size: 1.2rem;
+        }
+
+        .store-badge:hover {
+            background: #083b44;
+            color: white;
+            border-color: #083b44;
+        }
+
+        /* footer bottom bar */
+        .footer-bottom {
+            border-top: 1px solid #eef2f0;
+            padding-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #7c8b99;
+            font-size: 0.85rem;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .legal-links a {
+            text-decoration: none;
+            color: #5e6f82;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .legal-links a:hover {
+            color: #0f8b6e;
+        }
+
+        /* responsive tweaks */
+        @media (max-width: 768px) {
+            .site-footer {
+                padding: 50px 0 28px;
+            }
+            .footer-grid {
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .legal-links {
+                justify-content: center;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .newsletter-form button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-container {
+                width: 88%;
+            }
+            .footer-col h4:after {
+                width: 28px;
+            }
+        }
+
+        /* additional minor spacing */
+        .footer-col p {
+            color: #5b6f82;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 12px 0;
+        }
 </style>
 </head>
 <body>
@@ -725,18 +1429,119 @@ footer{
     </div>
 
     <!-- Customer logos row -->
+    <!-- LOGO SLIDER -->
+    
+
+<div class="container-fluid logo-slider">
+     <section class="brand-section">
+
     <div class="container">
-        <div class="logo-row">
-            <span class="logo-item">DB Schenker</span>
-            <span class="logo-item">Hard Rock Cafe</span>
-            <span class="logo-item">Liqui </span>
-            <span class="logo-item">Panasonic</span>
-            <span class="logo-item">Electrolux</span>
-            <span class="logo-item">DHL</span>
-            <span class="logo-item">Techland</span>
-            <span class="logo-item">RSM</span>
+
+        <h2 class="brand-title">
+            Create online tests, quizzes and exams
+        </h2>
+
+        <p class="brand-text">
+            We helped these great brands write their success stories.
+            Join them now. Choose professional online assessment tool.
+        </p>
+
+    </div>
+
+</section>
+
+    <div class="logo-track">
+
+        <!-- ORIGINAL -->
+
+        <div class="logo-item">
+            <i class="fa-solid fa-truck"></i>
+            DB Schenker
         </div>
-        <p style="text-align: center; font-size: 0.9rem; margin-top: -10px; color: var(--text-muted);">We helped these great brands write their success stories. Join them now.</p>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-guitar"></i>
+            Hard Rock Cafe
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-oil-can"></i>
+            Liqui Moly
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-tv"></i>
+            Panasonic
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-bolt"></i>
+            Electrolux
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-box"></i>
+            DHL
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-gamepad"></i>
+            Techland
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-chart-line"></i>
+            RSM
+        </div>
+
+        <!-- DUPLICATE FOR SMOOTH LOOP -->
+
+        <div class="logo-item">
+            <i class="fa-solid fa-truck"></i>
+            DB Schenker
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-guitar"></i>
+            Hard Rock Cafe
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-oil-can"></i>
+            Liqui Moly
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-tv"></i>
+            Panasonic
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-bolt"></i>
+            Electrolux
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-box"></i>
+            DHL
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-gamepad"></i>
+            Techland
+        </div>
+
+        <div class="logo-item">
+            <i class="fa-solid fa-chart-line"></i>
+            RSM
+        </div>
+
+    </div>
+
+
+
+
+        <p class="scroll">We helped these great brands write their success stories. Join them now.</p>
     </div>
 
     <!-- Skills and knowledge testing made easy (use cases) -->
@@ -789,52 +1594,93 @@ footer{
     </div>
 
     <!-- Microsoft Teams Integration -->
-    <div class="section">
-        <div class="container">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; background: #0f2b2d; color: white; border-radius: 48px; padding: 48px 40px;">
-                <div style="flex: 1.2;">
-                    <i class="fab fa-microsoft" style="font-size: 2.8rem; color: #8b5cf6;"></i>
-                    <h2 style="text-align: left; color: white; margin-top: 12px;">Testportal and Microsoft Teams.<br>A perfect match.</h2>
-                    <p style="margin: 16px 0; color: #cddfda;">Combine unique features with Teams power. Succeed in online assessments.</p>
-                    <a href="#" style="background: #ffffff20; backdrop-filter: blur(2px); color:white; padding: 10px 24px; border-radius: 40px; display: inline-block; text-decoration: none; font-weight: 600;">Add Testportal to Teams →</a>
-                </div>
-                <div style="flex: 1; text-align: center;"><i class="fas fa-chalkboard" style="font-size: 5rem; opacity: 0.8;"></i></div>
+   <section class="teams-section">
+
+    <div class="teams-container">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="teams-content">
+
+            <h1>
+                Testportal and Microsoft Teams.
+                A perfect match.
+            </h1>
+
+            <p>
+                Combine Testportal's unique features with the power of
+                Microsoft Teams. Experience the best of both worlds and
+                succeed in your online assessments.
+            </p>
+
+            <div class="btn-group">
+
+                <a href="#" class="btn-primary">
+                    Add Testportal to Microsoft Teams
+                </a>
+
+                <a href="#" class="btn-outline">
+                    Read more
+                </a>
+
             </div>
+
         </div>
+
+        <!-- RIGHT IMAGE -->
+
+        <div class="teams-image">
+
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="team">
+
+        </div>
+
     </div>
+
+</section>
 
     <!-- Enterprise + Trees saved -->
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0 48px;">
-            <div style="background: #f9f9fe; border-radius: 36px; padding: 36px;">
-                <i class="fas fa-shield-haltered" style="font-size: 2.2rem; color: #8b5cf6;"></i>
-                <h3>Enterprise-grade security & data protection</h3>
-                <p>Your respondents' personal data and assessment results are perfectly safe. We never access that information, easily modify or delete records any time.</p>
-                <a href="#" style="color: var(--primary-green); font-weight: 600;">Learn more →</a>
-            </div>
-            <div class="green-stat">
-                <i class="fas fa-tree" style="font-size: 2.2rem;"></i>
-                <h3 style="margin: 8px 0;">Let's save trees together</h3>
-                <p>Choose online assessments, reduce ecological footprint.</p>
-                <div style="margin: 24px 0;">
-                    <div><strong>📄 Answers given:</strong> 1,484,967,770</div>
-                    <div><strong>📋 Avg. questions/sheet:</strong> 5</div>
-                    <div><strong>🌳 Sheets from one tree:</strong> 8,000</div>
-                </div>
-                <div class="trees-number">🌲 37,124 <span style="font-size: 1.2rem;">trees saved</span></div>
-            </div>
-        </div>
+         <section class="security-section">
+
+    <div class="security-container">
+
+      <div class="security-image">
+        <img src="" alt="Security Image">
+      </div>
+
+      <div class="security-content">
+
+        <h1>
+          Enterprise-grade security and data protection
+        </h1>
+
+        <p>
+          Your respondents' personal data and assessment results are perfectly
+          safe with us. We never access that information, and you can easily
+          modify or delete records at any time.
+        </p>
+
+        <a href="#" class="learn-btn">
+          Learn more
+        </a>
+
+      </div>
+
     </div>
 
+  </section>
+          
+
     <!-- Testimonial DHL -->
-    <div class="container">
+    <!-- <div class="container">
         <h2 style="text-align: left;">What our users say</h2>
         <div class="testimonial">
             <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--primary-green); opacity: 0.4;"></i>
             <p style="font-size: 1.1rem; margin: 16px 0; line-height: 1.5;">"Our company has been assessing the knowledge of our employees and delivery persons to guarantee professional customer service. Testportal proved to be a great platform with clear test-creation interface. During assessment we monitor progress, after test we receive detailed statistics."</p>
             <div style="display: flex; align-items: center; gap: 16px; margin-top: 20px;"><img src="https://ui-avatars.com/api/?background=1f8b4c&color=fff&name=Hirek+C" style="width: 52px; border-radius: 50%;" alt="avatar"><div><strong>Hirek Chmielowiec</strong><br>OPS Trainer, DHL</div></div>
         </div>
-    </div>
+    </div>  -->
 
     <!-- Blog section -->
     <div class="section">
@@ -852,7 +1698,7 @@ footer{
     <!-- final CTA -->
     <div class="container" style="margin-bottom: 80px;">
         <div style="background: linear-gradient(135deg, #eef7f2, #ffffff); border-radius: 60px; padding: 64px 32px; text-align: center;">
-            <h2>Create your first online test, quiz or exam</h2>
+            <h2 class="margin">Create your first online test, quiz or exam</h2>
             <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 28px;">Explore all of Testportal assessment software features and streamline your online assessments. It's on the house. You're welcome.</p>
             <a href="#" class="btn btn-primary" style="font-size: 1.1rem;">Sign up free →</a>
             <p style="margin-top: 16px;">✓ Free registration  ✓ AI-driven features  ✓ No credit card</p>
@@ -860,17 +1706,132 @@ footer{
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div><h4>Product</h4><ul style="list-style: none; margin-top: 12px;"><li>Skills Assessment</li><li>Online Quiz Maker</li><li>Exam Software</li><li>AI Question Creator</li></ul></div>
-            <div><h4>For Business</h4><ul style="list-style: none;"><li>HR & Recruitment</li><li>Training Departments</li><li>Certification</li><li>Sales & Customer Service</li></ul></div>
-            <div><h4>Resources</h4><ul><li>Help Center</li><li>Customer Stories</li><li>About Us</li><li>Contact</li></ul></div>
-            <div><h4>Legal</h4><ul><li>Privacy Policy</li><li>Terms & Conditions</li><li>Cookie Settings</li></ul><div style="margin-top: 20px;"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i></div></div>
-        </div>
-        <hr style="margin: 48px 0 24px; border-color: #e2e8f0;">
-        <p style="text-align: center; color: #7c8b99;">© Testportal 2026 — AI-powered skills and knowledge assessment platform</p>
+ <!-- dummy page content to showcase realistic footer placement -->
+    <div class="dummy-content">
+        <h2>Testportal | AI-powered assessment platform</h2>
+        <p>Modern skills evaluation, exams, quizzes, and enterprise-grade analytics.</p>
+        <p style="margin-top: 12px;">👇 Scroll down to see the stunning footer component — clean, accessible, and fully responsive.</p>
     </div>
-</footer>
+
+    <!-- ==================== ONLY FOOTER SECTION ==================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- main grid columns -->
+            <div class="footer-grid">
+                <!-- column 1: product & features -->
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Skills & Knowledge Assessment</a></li>
+                        <li><a href="#">Online Quiz Maker</a></li>
+                        <li><a href="#">Easy Test Maker</a></li>
+                        <li><a href="#">Exam Software</a></li>
+                        <li><a href="#">AI-Powered Question Creation</a></li>
+                        <li><a href="#">Insights & Analytics</a></li>
+                        <li><a href="#">Smart Proctoring</a></li>
+                        <li><a href="#">Microsoft Teams Quiz Maker</a></li>
+                        <li><a href="#">Integrations & API</a></li>
+                        <li><a href="#">Compare Plans</a></li>
+                    </ul>
+                </div>
+
+                <!-- column 2: for business use -->
+                <div class="footer-col">
+                    <h4>For Business</h4>
+                    <ul>
+                        <li><a href="#">Human Resources</a></li>
+                        <li><a href="#">Training Companies & Departments</a></li>
+                        <li><a href="#">Certification Programs</a></li>
+                        <li><a href="#">Sales & Customer Service</a></li>
+                        <li><a href="#">Language Schools</a></li>
+                        <li><a href="#">Remote Hiring</a></li>
+                    </ul>
+                    <h4 style="margin-top: 28px;">For Education</h4>
+                    <ul>
+                        <li><a href="#">Teachers & Educators</a></li>
+                        <li><a href="#">Schools & K-12</a></li>
+                        <li><a href="#">Universities & Colleges</a></li>
+                        <li><a href="#">E-Learning Platforms</a></li>
+                    </ul>
+                </div>
+
+                <!-- column 3: use cases and resources -->
+                <div class="footer-col">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li><a href="#">Recruitment & Pre-employment</a></li>
+                        <li><a href="#">Employee Training</a></li>
+                        <li><a href="#">Customer Service Assessment</a></li>
+                        <li><a href="#">Certification Exams</a></li>
+                        <li><a href="#">Safety Procedures</a></li>
+                        <li><a href="#">Formative Assessment</a></li>
+                        <li><a href="#">Homework & Quizzes</a></li>
+                        <li><a href="#">Competitions & Contests</a></li>
+                    </ul>
+                </div>
+
+                <!-- column 4: resources + support + newsletter & socials -->
+                <div class="footer-col">
+                    <h4>Resources & Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center / Guides</a></li>
+                        <li><a href="#">Customer Stories</a></li>
+                        <li><a href="#">Webinars & Events</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                    
+                    <!-- newsletter subscription (modern interactive element) -->
+                    <div class="footer-newsletter">
+                        <h4 style="margin-top: 16px;">Stay updated</h4>
+                        <div class="newsletter-text">
+                            Get the latest insights, product updates, and AI assessment tips.
+                        </div>
+                        <form class="newsletter-form" action="#" method="post">
+                            <input type="email" placeholder="Your work email" required>
+                            <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- social media links -->
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+
+                    <!-- optional app/trust badges (makes footer richer) -->
+                    <div class="store-badges">
+                        <a href="#" class="store-badge"><i class="fab fa-microsoft"></i> Teams App</a>
+                        <a href="#" class="store-badge"><i class="fas fa-mobile-alt"></i> Mobile Ready</a>
+                        <a href="#" class="store-badge"><i class="fas fa-shield-alt"></i> GDPR Compliant</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bottom bar: copyright + legal links -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 Testportal — AI-powered skills and knowledge assessment platform
+                </div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Settings</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Security & Trust</a>
+                </div>
+            </div>
+
+            <!-- extra micro element (global footprint) optional -->
+            <div style="text-align: center; margin-top: 30px; font-size: 0.75rem; color: #98a9b9;">
+                <i class="fas fa-globe-americas"></i> Serving 2git branchM+ users worldwide · Enterprise-grade security & smart proctoring
+            </div>
+        </div>
+    </footer>
+    <!-- ==================== END FOOTER ==================== -->
 </body>
 </html>
